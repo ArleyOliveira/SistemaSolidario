@@ -16,7 +16,7 @@ class Inicio extends CI_Controller {
     public function index() {
         $dados = array(
             'titulo' => 'Sistem Solidário',
-            'tela' => 'welcome_message',
+            'tela' => 'paginasStaticas/inicio',
         );
         $this->load->view("exibirDados", $dados);
     }

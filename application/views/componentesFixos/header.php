@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lte IE 9]>
-<html lang="en" class="oldie">
-<![endif]-->
-<!--[if gt IE 9]><!-->
-<html lang="pt-br">
-    
+<html lang="pt-br">    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
