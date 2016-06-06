@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inicio extends CI_Controller {
+class Pagina extends CI_Controller {
 
     function __construct() {
         parent:: __construct();
@@ -13,10 +13,10 @@ class Inicio extends CI_Controller {
         $this->load->library('table');
     }
     
-    public function index() {
+    public function comodoar() {
         $dados = array(
             'titulo' => 'Sistem Solidário',
-            'tela' => 'paginasStaticas/inicio',
+            'tela' => 'paginasStaticas/ComoDoar',
         );
         $this->load->view("exibirDados", $dados);
     }
