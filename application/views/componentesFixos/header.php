@@ -17,6 +17,8 @@
 
         <!-- MyStyle -->
         <link rel="stylesheet" href="<?php echo base_url('lib/style/style.css') ?>">
+        
+        <title> <?php echo $titulo ?></title>
 
     </head>
     <body>
