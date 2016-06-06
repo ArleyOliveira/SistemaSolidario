@@ -20,5 +20,13 @@ class Pagina extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
     }
+    
+    public function politica() {
+        $dados = array(
+            'titulo' => 'Sistem Solidário',
+            'tela' => 'paginasStaticas/politicaPrivacidade',
+        );
+        $this->load->view("exibirDados", $dados);
+    }
 
 }
