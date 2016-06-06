@@ -7,13 +7,17 @@
         <meta name="theme-color" content="#3b4ba7">
 
         <link REL="SHORTCUT ICON" HREF="<?php echo base_url('icon/icon.ico') ?>">
-        
-       <!-- Jquery -->
-       <script src="<?php echo base_url('lib/jquery/jquery-2.1.4.min.js') ?>" type="text/javascript"></script>
+
+        <!-- Jquery -->
+        <script src="<?php echo base_url('lib/jquery/jquery-2.1.4.min.js') ?>" type="text/javascript"></script>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="<?php echo base_url('lib/bootstrap/css/bootstrap.min.css') ?>">
         <script src="<?php echo base_url('lib/bootstrap/js/bootstrap.min.js') ?>"></script>
-      
+
+        <!-- MyStyle -->
+        <link rel="stylesheet" href="<?php echo base_url('lib/style/style.css') ?>">
+
     </head>
     <body>
+        
