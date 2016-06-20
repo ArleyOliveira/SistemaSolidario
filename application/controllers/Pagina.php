@@ -11,6 +11,7 @@ class Pagina extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('array');
         $this->load->library('table');
+        $this->load->library('image_lib');
     }
     
     public function comodoar() {
@@ -19,6 +20,7 @@ class Pagina extends CI_Controller {
             'tela' => 'paginasStaticas/ComoDoar',
         );
         $this->load->view("exibirDados", $dados);
+       
     }
     
     public function politica() {
