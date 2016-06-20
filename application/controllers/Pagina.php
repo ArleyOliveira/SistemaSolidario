@@ -28,5 +28,12 @@ class Pagina extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
     }
+    public function quemSomos() {
+        $dados = array(
+            'titulo' => 'Sistem Solidário',
+            'tela' => 'paginasStaticas/quemSomos',
+        );
+        $this->load->view("exibirDados", $dados);
+    }
 
 }
