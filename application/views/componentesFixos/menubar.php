@@ -17,7 +17,7 @@
                 <li class="active">
                     <a href="#"> Instituições </a>
                 </li>
-                <li><a href="#">Como Doar</a></li>
+                <li><a href="<?php echo base_url("pagina/comodoar"); ?>">Como Doar</a></li>
                 <li><a href="#">Quem Somos</a></li>
                 <li> <a href="<?php echo base_url("pagina/politica"); ?>"> Politica e Segurança </a>
             </ul>
