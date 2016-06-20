@@ -2,8 +2,7 @@
 <p>Cada ação em favor do próximo é extremamente importante.
 Participar de uma campanha de doação na sua cidade ou região não é apenas alimentar o próximo que não tem recursos para comprar alimento.
 É também dizer que, para você, o mundo pode ser um lugar melhor para todos.
-Toda doação é um gesto de solidariedade. Doar sangue, tempo, dinheiro ou o que quer que seja é uma atitude generosa, que o universo há de recompensar.
-</p>
+Toda doação é um gesto de solidariedade. Doar sangue, tempo, dinheiro ou o que quer que seja é uma atitude generosa, que o universo há de recompensar.</p>
 <h1>Tipos de Doações</h1>
 <ul> 
         <li>Doação de alimentos</li> 
