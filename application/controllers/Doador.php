@@ -33,7 +33,7 @@ class Doador extends CI_Controller {
         
         $dados = array(
             'titulo' => 'Sistem Solidário',
-            'tela' => 'paginasStaticas/inicio',
+            'tela' => 'doadores/cadastrar',
         );
         $this->load->view("exibirDados", $dados);
     }
@@ -42,8 +42,8 @@ class Doador extends CI_Controller {
         $doadores = $this->DoadorDAO->get_all();
         $dados = array(
             'titulo' => 'Sistema Solidário',
-            'tela' => 'doador/consultar',
-            'disciplinas' => $doadores,
+            'tela' => 'doadores/consultar',
+            'doadores' => $doadores,
         );
         $this->load->view("exibirDados", $dados);
     }
