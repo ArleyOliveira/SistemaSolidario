@@ -15,12 +15,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Instituições</a>
+                    <a href="<?php echo base_url("pagina/instituicoes"); ?>"> Instituições </a>
                 </li>
-                <li><a href="#">Como Doar</a></li>
                 <li><a href="<?php echo base_url("pagina/quemSomos"); ?>">Quem Somos</a></li>
                 <li><a href="<?php echo base_url("pagina/comodoar"); ?>">Como Doar</a></li>
-                <li><a href="#">Quem Somos</a></li>
                 <li> <a href="<?php echo base_url("pagina/politica"); ?>"> Politica e Segurança </a>
             </ul>
             <ul class="nav navbar-nav navbar-right">
