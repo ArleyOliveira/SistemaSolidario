@@ -38,26 +38,4 @@ class Pagina extends CI_Controller {
         $this->load->view("exibirDados", $dados);
     }
 
-    public function instituicoes() {
-        $dados = array(
-            'titulo' => 'Sistem Solidário',
-            'tela' => 'paginasStaticas/instituicoes',
-        );
-        $this->load->view("exibirDados", $dados);
-    }
-    public function instServir() {
-        $dados = array(
-            'titulo' => 'Sistem Solidário',
-            'tela' => 'paginasStaticas/instServir',
-        );
-        $this->load->view("exibirDados", $dados);
-    }
-    public function instDavi() {
-        $dados = array(
-            'titulo' => 'Sistem Solidário',
-            'tela' => 'paginasStaticas/instDavi',
-        );
-        $this->load->view("exibirDados", $dados);
-    }
-
 }
