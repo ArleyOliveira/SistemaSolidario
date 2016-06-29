@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 29/06/2016 às 15:51
+-- Tempo de Geração: 29/06/2016 às 16:45
 -- Versão do servidor: 5.5.47-0ubuntu0.14.04.1
 -- Versão do PHP: 5.5.9-1ubuntu4.17
 
@@ -34,6 +34,23 @@ CREATE TABLE IF NOT EXISTS `doadores` (
   `senha` varchar(20) NOT NULL,
   `dataNascimento` date NOT NULL,
   `telefone` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `dataNascimento` date NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `senha` varchar(30) NOT NULL,
+  `isModerador` tinyint(1) NOT NULL,
+  `isAdministrador` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
