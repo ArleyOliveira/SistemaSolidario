@@ -7,8 +7,8 @@ class Doador_model extends CI_Model {
     public function do_insert($dados = NULL) {
 
         if ($dados != NULL):
-            $this->db->insert('doador', $dados);
-            $this->session->set_flashdata('cadastrook', IconsUtil::getIcone(IconsUtil::ICON_OK) . ' Cadastro efetuado com sucesso!');
+            $this->db->insert('doadores', $dados);
+            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso!');
             redirect('doador/cadastrar');
         endif;
     }
@@ -16,6 +16,8 @@ class Doador_model extends CI_Model {
     public function get_all() {
         return $this->db->get('doadores');
     }
+    
+    
 
     /*
       public function do_delete($condicao = NULL) {
