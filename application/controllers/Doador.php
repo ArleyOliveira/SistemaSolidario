@@ -11,6 +11,7 @@ class Doador extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('array');
         $this->load->library('table');
+        $this->load->library('session');
         $this->load->model('Doador_model', "DoadorDAO");
     }
 
@@ -19,10 +20,10 @@ class Doador extends CI_Controller {
         $this->form_validation->set_rules('endereco', 'Senha', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('telefone', 'Área do conhecimento', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('dataNascimento', 'Data de Nascimento', 'trim|required|max_length[100]');   
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]|strtolower|valid_email|is_unique[doadores.email]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]');
 	$this->form_validation->set_rules('senha', 'Senha', 'trim|required');
         $this->form_validation->set_message('matches', 'O campo %s não corresponde com o campo %s');
-        $this->form_validation->set_rules('repitaSenha', 'Repita a Senha', 'trim|required|matches[senha]');
+        $this->form_validation->set_rules('senha2', 'Repita a Senha', 'trim|required|matches[senha]');
          
       
         if ($this->form_validation->run()):
