@@ -17,7 +17,7 @@
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastro de Doadores</h3>
                         </div>
                         <?php
-                        echo form_open('doadores/create');
+                        echo form_open('doador/cadastrar');
                         echo form_label('Nome Completo (*)') . "<br />";
                         echo form_input(array('id' => 'nome', 'name' => 'nome', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value('nome')) . "<br />";
                         echo form_label('Endereço (*)') . "<br />";
@@ -25,7 +25,7 @@
                         echo form_label('Telefone (*)') . "<br />";
                         echo form_input(array('id' => 'telefone', 'name' => 'telefone', 'class' => 'form-control', 'placeholder' => 'Telefone'), set_value('telefone')) . "<br />";
                         echo form_label('Data de Nascimento (*)') . "<br />";
-                        echo form_input(array('id' => 'dataNascimento', 'name' => 'dataNascimento', 'class' => 'form-control', 'placeholder' => 'Data de Nascimento'), set_value('dataNascimento')) . "<br />";
+                        echo form_input(array('id' => 'dataNascimento', 'name' => 'dataNascimento', 'type' => 'date', 'class' => 'form-control', 'placeholder' => 'Data de Nascimento'), set_value('dataNascimento')) . "<br />";
                         echo form_label('Email (*)') . "<br />";
                         echo form_input(array('name' => 'email', 'class' => 'form-control', 'placeholder' => 'Email'), set_value('email')) . "<br />";
                         echo form_label("Senha (*)") . "<br />";
