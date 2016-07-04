@@ -22,12 +22,9 @@ class Instituicao extends CI_Controller {
         $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]');
         $this->form_validation->set_rules('endereco', 'Endereco', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('descricao', 'Descricao', 'trim|required|max_length[800]');
-        $this->form_validation->set_rules('isDisponivel','IsDisponivel');
 
-         
-      
         if ($this->form_validation->run()):
-            $dados = elements(array('nome', 'cnpj', 'telefone', 'email', 'endereco', 'descricao', 'isDisponivel'), $this->input->post());            
+            $dados = elements(array('nome', 'cnpj', 'telefone', 'email', 'endereco', 'descricao'), $this->input->post());            
                 $this->InstituicaoDAO->do_insert($dados);
         endif;
         
