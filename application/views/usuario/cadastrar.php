@@ -3,9 +3,9 @@ if (validation_errors() != NULL):
     echo validation_errors();
 endif;
 
-if ($this->session->flashdata('cadastrook')):
-    echo $this->session->flashdata('cadastrook');
-endif;
+//if ($this->session->flashdata('cadastrook')):
+    //echo $this->session->flashdata('cadastrook');
+//endif;
 ?>
 
 <div class = "panel-body">

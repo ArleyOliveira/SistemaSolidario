@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Doador_model extends CI_Model {
+class Usuario_model extends CI_Model {
 
     public function do_insert($dados = NULL) {
 
@@ -28,7 +28,7 @@ class Doador_model extends CI_Model {
 
       public function get_all() {
       return $this->db->get('usuario');
-      }
+      }*/
 
 
       public function get_byEmailAt($email = NULL, $tabela = NULL) {
@@ -42,6 +42,7 @@ class Doador_model extends CI_Model {
       endif;
       }
 
+      /*
       public function do_update($dados = NULL, $condicao = NULL) {
       if ($dados != NULL && $condicao != NULL):
       $this->db->update('usuario', $dados, $condicao);
