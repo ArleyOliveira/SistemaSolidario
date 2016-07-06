@@ -48,5 +48,47 @@ class Usuario extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
     }
+    
+    public function login() {
+        $this->form_validation->set_rules('email', 'EMAIL', 'trim|required|max_length[50]|strtolower|valid_email');
+        $this->form_validation->set_rules('senha', 'SENHA', 'trim|required|strtolower');
+        
+        if ($this->form_validation->run() == TRUE) {
+            
+            $dados = elements(array('email', 'senha'), $this->input->post());
+            $dados['senha'] = md5($dados['senha']);
+            
+               $usuario = $this->UsuarioDAO->get_byEmail_Admin($dados['email'], $dados['senha']);
+                
+        if ($usuario != false):
+               foreach ($usuario->result() as $linha):
+                    $nome = $linha->nome;
+                    $email = $linha->email;
+                                        
+        endforeach;
+                $novousuario = array(
+                    'nome' => $nome,
+                    'email' => $email,
+                    'esta_logado' => TRUE,
+                );
+                
+                $this->session->set_userdata($novousuario);
+                
+                redirect('inicio/home');
+            else:
+                
+                $this->session->set_flashdata('usuarioinvalido', 'Usuário ou senha invalido. Tente novamente!');
+                //redirect('/');
+            endif;
+            
+        }else {
+            
+            if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['tipo'])) {
+                $this->session->set_flashdata('usuarioinvalido', 'Os campos não foram preenchidos corretamente ou podem está vazios!');
+            }
+        }
+        
+        $this->load->view("login");
+    }
 
 }
