@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/SistemaSolidario/application/controllers/Doador.php</file>
-            <file>file:/opt/lampp/htdocs/SistemaSolidario/application/views/doadores/cadastrar.php</file>
-            <file>file:/opt/lampp/htdocs/SistemaSolidario/application/views/componentesFixos/menubar.php</file>
-            <file>file:/opt/lampp/htdocs/SistemaSolidario/application/config/autoload.php</file>
-            <file>file:/opt/lampp/htdocs/SistemaSolidario/application/config/database.php</file>
-            <file>file:/opt/lampp/htdocs/SistemaSolidario/application/models/Doador_model.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Instituicao.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/instituicoes/consultar.php</file>
+            <file>file:/var/www/html/SistemaSolidario/index.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/doadores/cadastrar.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/models/Instituicao_model.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/instituicoes/cadastrar.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Pagina.php</file>
         </group>
     </open-files>
 </project-private>
