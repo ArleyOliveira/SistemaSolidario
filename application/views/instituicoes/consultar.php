@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -13,35 +14,36 @@
                 <th>Status</th>
             </tr>
             <?php
-            foreach ($instituicoes->result() as $instituicao) {
+            foreach ($doadores->result() as $doador) {
                 echo '<tr>';
-                    echo '<td>';
-                    echo $instituicao->nome;
-                    echo '</td>';
-                    echo '<td>';
-                    echo $instituicao->cnpj;
-                    echo '</td>';
-                    echo '<td>';
-                    echo $instituicao->telefone;
-                    echo '</td>';
-                    echo '<td>';
-                    echo $instituicao->email;
-                    echo '</td>';
-                    echo '<td>';
-                    echo $instituicao->endereco;
-                    echo '</td>';
-                    echo '<td>';
-                    echo $instituicao->descricao;
-                    echo '</td>';
-                    echo '<td>';
-                    if($instituicao->isDisponivel)
-                        echo '<span class="label label-success"> Ativo </span>';
-                    else
-                        echo '<span class="label label-danger"> Desativado </span>';
-                    echo '</td>';
+                echo '<td>';
+                echo $doador->nome;
+                echo '</td>';
+                echo '<td>';
+                echo $doador->cnpj;
+                echo '</td>';
+                echo '<td>';
+                echo $doador->telefone;
+                echo '</td>';
+                echo '<td>';
+                echo $doador->email;
+                echo '</td>';
+                echo '<td>';
+                echo $doador->endereco;
+                echo '</td>';
+                echo '<td>';
+                echo $doador->descricao;
+                echo '</td>';
+                echo '<td>';
+                if ($doador->isDisponivel)
+                    echo '<span class="label label-success"> Ativo </span>';
+                else
+                    echo '<span class="label label-danger"> Desativado </span>';
+                echo '</td>';
                 echo '</tr>';
             }
             ?>
+        </table>
     </div>
     <div class="col-md-2"></div>
-</table>
+</div>

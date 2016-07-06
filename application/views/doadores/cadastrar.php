@@ -18,7 +18,7 @@ endif;
                         <span class = "glyphicon glyphicon-plus-sign" aria-hidden = "true"></span> Cadastro de Doadores</h3>
                 </div>
                 <?php
-                echo form_open('doador/cadastrar');
+                echo form_open('index.php/doador/cadastrar');
                 echo form_label('Nome Completo (*)') . "<br />";
                 echo form_input(array('id' => 'nome', 'name' => 'nome', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value('nome')) . "<br />";
                 echo form_label('Endereço (*)') . "<br />";
