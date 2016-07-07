@@ -31,16 +31,22 @@ class Usuario_model extends CI_Model {
       }*/
 
 
-      public function get_byEmailAt($email = NULL, $tabela = NULL) {
-      if ($email != NULL && $tabela != NULL):
-      $this->db->where('email', $email);
-      $this->db->limit(1);
-      return $this->db->get($tabela);
-      else:
-      return false;
+    public function get_Login($email = NULL, $senha = NULL) {
+        echo $email . ' '. $senha;
+        if ($email != NULL && $senha != NULL):
+            $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
+            $query = $this->db->query($sql, array($email, $senha));
+            var_dump($query->result());
+            if ($query->num_rows() > 0 && $query->num_rows() == 1):
+                return $query;
+            else:
+                return false;
+            endif;
+        else:
+            return false;
 
-      endif;
-      }
+        endif;
+    }
 
       /*
       public function do_update($dados = NULL, $condicao = NULL) {

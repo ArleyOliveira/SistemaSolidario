@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="<?php echo base_url('lib/style/style.css') ?>">
 
         <title> <?php echo $titulo ?></title>
-<<<<<<< HEAD
 
         <style>
 
@@ -37,15 +36,10 @@
             -------------------------------------------------- */
             /* Not required for template or sticky footer method. */
 
-   
+
             .container .text-muted {
                 margin: 20px 0;
             }
-
         </style>
-
-=======
-        
->>>>>>> a4d1310d18d211cb560fa2f852a979aecd609e88
     </head>
     <body>

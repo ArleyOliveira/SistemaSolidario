@@ -27,14 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `doadores` (
-  `id` int(11) NOT NULL,
+  `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(40) NOT NULL,
   `endereço` varchar(150) NOT NULL,
   `email` varchar(40) NOT NULL,
   `senha` varchar(20) NOT NULL,
   `dataNascimento` date NOT NULL,
-  `telefone` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -71,14 +70,13 @@ INSERT INTO `instituicoes` (`id`, `nome`, `cnpj`, `telefone`, `email`, `endereco
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(11) NOT NULL,
+  `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(50) NOT NULL,
   `dataNascimento` date NOT NULL,
   `email` varchar(30) NOT NULL,
   `senha` varchar(30) NOT NULL,
   `isModerador` tinyint(1) NOT NULL,
-  `isAdministrador` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
+  `isAdministrador` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
