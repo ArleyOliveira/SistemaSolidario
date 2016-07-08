@@ -63,8 +63,6 @@ class Usuario_model extends CI_Model {
                 }
                 return $dados;
             }
-            print_r($query->result());
-            die;
             return false;
         }
         return false;
