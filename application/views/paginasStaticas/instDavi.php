@@ -5,7 +5,7 @@
         <h1>Instituição Pequeno Davi</h1>
     </div>
  <div class="row">
-    <div class="col-md-12" align="justify"> 
+    <div > 
         <p>A associação Pequeno Davi é presidida pela Irmã Maria Luiza de Andrade, que presta assistência a crianças carentes e 
             desnutridas de 0 a 6 anos de idade, bem como a suas famílias e é considerada uma das mais sérias entidades da região 
             norte de Minas Gerais.</br>
