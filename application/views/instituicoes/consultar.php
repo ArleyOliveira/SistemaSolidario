@@ -14,28 +14,28 @@
                 <th>Status</th>
             </tr>
             <?php
-            foreach ($doadores->result() as $doador) {
+            foreach ($instituicoes->result() as $instituicao) {
                 echo '<tr>';
                 echo '<td>';
-                echo $doador->nome;
+                echo $instituicao->nome;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->cnpj;
+                echo $instituicao->cnpj;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->telefone;
+                echo $instituicao->telefone;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->email;
+                echo $instituicao->email;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->endereco;
+                echo $instituicao->endereco;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->descricao;
+                echo $instituicao->descricao;
                 echo '</td>';
                 echo '<td>';
-                if ($doador->isDisponivel)
+                if ($instituicao->isDisponivel)
                     echo '<span class="label label-success"> Ativo </span>';
                 else
                     echo '<span class="label label-danger"> Desativado </span>';
