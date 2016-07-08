@@ -31,21 +31,43 @@ class Usuario_model extends CI_Model {
       }*/
 
 
-    public function get_Login($email = NULL, $senha = NULL) {
-        echo $email . ' '. $senha;
-        if ($email != NULL && $senha != NULL):
+    public function get_Login($email = NULL, $senha = NULL)
+    {
+        $tipo = null;
+        if ($email != NULL && $senha != NULL) {
             $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
             $query = $this->db->query($sql, array($email, $senha));
-            var_dump($query->result());
-            if ($query->num_rows() > 0 && $query->num_rows() == 1):
-                return $query;
-            else:
-                return false;
-            endif;
-        else:
-            return false;
+            if ($query->num_rows() > 0 && $query->num_rows() == 1)
+                $tipo = "admin";
+            else {
+                $sql = "SELECT * FROM doadores WHERE email = ? AND senha = ?";
+                $query = $this->db->query($sql, array($email, $senha));
+                if ($query->num_rows() > 0 && $query->num_rows() == 1) {
+                    $tipo = "doador";
+                }
+            }
 
-        endif;
+            if($tipo != null){
+                $usuario = $query->result()[0];
+                $dados = array(
+                  'nome' =>   $usuario->nome,
+                  'email' => $usuario->email,
+                  'tipo' => $tipo,
+                  'id' => $usuario->id,
+                  'dataNascimento' => $usuario->dataNascimento,
+                );
+                if($tipo == 'admin'){
+                    $dados['isAdministrador'] = $usuario->isAdministrador;
+                    $dados['isModelrador'] = $usuario->isModerador;
+
+                }
+                return $dados;
+            }
+            print_r($query->result());
+            die;
+            return false;
+        }
+        return false;
     }
 
       /*

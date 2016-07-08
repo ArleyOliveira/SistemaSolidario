@@ -19,26 +19,16 @@
         <link rel="stylesheet" href="<?php echo base_url('lib/style/style.css') ?>">
 
         <title> <?php echo $titulo ?></title>
-
         <style>
-
-            .footer {
-                position: absolute;
+            footer {
+                position: fixed;
+                height: 50px;
                 bottom: 0;
                 width: 100%;
-                /* Set the fixed height of the footer here */
-                height: 60px;
-                background-color: #f5f5f5;
-            }
-
-
-            /* Custom page CSS
-            -------------------------------------------------- */
-            /* Not required for template or sticky footer method. */
-
-
-            .container .text-muted {
-                margin: 20px 0;
+                background-color: #dedede;
+                text-align: center;
+                padding-top: 10px;
+                font-weight: bold;
             }
         </style>
     </head>

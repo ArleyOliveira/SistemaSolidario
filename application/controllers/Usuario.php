@@ -14,6 +14,7 @@ class Usuario extends CI_Controller
         $this->load->helper('array');
         $this->load->library('table');
         $this->load->model('Usuario_model', "UsuarioDAO");
+        $this->load->model('Doador_model', "DoadorDAO");
     }
 
     public function cadastrar()
@@ -66,20 +67,10 @@ class Usuario extends CI_Controller
 
             $dados = elements(array('email', 'senha'), $this->input->post());
             $dados['senha'] = md5($dados['senha']);
+
             $usuario = $this->UsuarioDAO->get_Login($dados['email'], $dados['senha']);
             if ($usuario != false):
-                foreach ($usuario->result() as $linha):
-                    $nome = $linha->nome;
-                    $email = $linha->email;
-                endforeach;
-                $novousuario = array(
-                    'nome' => $nome,
-                    'email' => $email,
-                    'esta_logado' => TRUE,
-                );
-
-                $this->session->set_userdata($novousuario);
-
+                $this->session->set_userdata($usuario);
                 redirect('inicio/');
             else:
                 $this->session->set_flashdata('usuarioinvalido', 'Usuário ou senha invalido. Tente novamente!');

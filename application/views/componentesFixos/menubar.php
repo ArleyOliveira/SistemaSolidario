@@ -34,6 +34,14 @@
                                aria-haspopup="true"
                                aria-expanded="false"><?php echo $this->session->nome ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
+                                <?php
+                                if(isset($this->session->isAdministrador)) {?>
+                                    <li> <a href="<?php echo base_url("instituicao/consultar") ?>"> Instituições</a> </li>
+                                    <li> <a href="<?php echo base_url("doador/consultar") ?>">Doadores</a> </li>
+                                    <li> <a href="<?php echo base_url("usuario/consultar") ?>"> Usuários</a> </li>
+                                <?php }
+                                ?>
+                                <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="<?php echo base_url("usuario/logout")?>">Sair</a>
                                 </li>
