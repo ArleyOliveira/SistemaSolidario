@@ -17,7 +17,22 @@ class Instituicao_model extends CI_Model {
         return $this->db->get('instituicoes');
     }
     
+    public function do_update($dados = NULL) {
+
+        if ($dados != NULL):
+            $this->db->update('instituicoes', $dados);
+            $this->session->set_flashdata('cadastrook','Instituição Ativa!');
+            redirect('/index.php/instituicao/consultar');
+        endif;
+    }
     
+    public function get_instituicoes_by_id($idinstituicao){
+        //Busca com condição
+        $query = $this->db->get_where('instituicoes', array('id' => $idinstituicao));
+ 
+        //row_object() retorna direto o objeto produto e não um array
+        return $query->row_object();
+    }
 
     /*
       public function do_delete($condicao = NULL) {

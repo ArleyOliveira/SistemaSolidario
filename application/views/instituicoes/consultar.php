@@ -12,6 +12,8 @@
                 <th>Endereço</th>
                 <th>Descriçao</th>
                 <th>Status</th>
+                <th>Ativar</th>
+                
             </tr>
             <?php
             foreach ($instituicoes->result() as $instituicao) {
@@ -40,10 +42,16 @@
                 else
                     echo '<span class="label label-danger"> Desativado </span>';
                 echo '</td>';
+                echo '<td>';
+                echo '<a href="'. base_url('Instituicao/editar/').' "> <i class="material-icons">Ativar</i></a>';
+                echo '</td>';
                 echo '</tr>';
-            }
+                }
             ?>
+            
         </table>
+        
     </div>
+    
     <div class="col-md-2"></div>
 </div>

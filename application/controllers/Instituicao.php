@@ -44,5 +44,11 @@ class Instituicao extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
     }
+    
+    public function editar(){
+        $instituicoes = $this->InstituicaoDAO->get_instituicoes_by_id($id);
+        $instituicoes['isDisponivel'] = 1;
+        $this->InstituicaoDAO->do_update($instituicoes);
+    }
 
 }
