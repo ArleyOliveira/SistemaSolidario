@@ -43,7 +43,7 @@
                     echo '<span class="label label-danger"> Desativado </span>';
                 echo '</td>';
                 echo '<td>';
-                echo '<a href="'. base_url('Instituicao/editar/').' "> <id="'.$instituicao->id.'"> <i class="material-icons">Ativar</i></a>';
+                echo '<a href="'. base_url('Instituicao/ativarInstituicao/'.$instituicao->id).'"> Ativar </a>';
                 echo '</td>';
                 echo '</tr>';
                 }

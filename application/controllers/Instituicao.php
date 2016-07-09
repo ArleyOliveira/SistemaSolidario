@@ -2,9 +2,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Instituicao extends CI_Controller {
+class Instituicao extends CI_Controller
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent:: __construct();
         $this->load->helper('url');
         $this->load->helper('form');
@@ -15,27 +17,29 @@ class Instituicao extends CI_Controller {
         $this->load->model('Instituicao_model', "InstituicaoDAO");
     }
 
-    public function cadastrar() {
+    public function cadastrar()
+    {
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
-        $this->form_validation->set_rules('cnpj', 'CNPJ', 'trim|required|max_length[14]');
-        $this->form_validation->set_rules('telefone', 'Área do conhecimento', 'trim|required|max_length[100]');  
+        $this->form_validation->set_rules('cnpj', 'CNPJ', 'trim|required|max_length[20]');
+        $this->form_validation->set_rules('telefone', 'Área do conhecimento', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]');
         $this->form_validation->set_rules('endereco', 'Endereco', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('descricao', 'Descricao', 'trim|required|max_length[800]');
 
         if ($this->form_validation->run()):
-            $dados = elements(array('nome', 'cnpj', 'telefone', 'email', 'endereco', 'descricao'), $this->input->post());            
-                $this->InstituicaoDAO->do_insert($dados);
+            $dados = elements(array('nome', 'cnpj', 'telefone', 'email', 'endereco', 'descricao'), $this->input->post());
+            $this->InstituicaoDAO->do_insert($dados);
         endif;
-        
+
         $dados = array(
             'titulo' => 'Sistem Solidário',
             'tela' => 'instituicoes/cadastrar',
         );
         $this->load->view("exibirDados", $dados);
     }
-    
-    public function consultar(){
+
+    public function consultar()
+    {
         $instituicoes = $this->InstituicaoDAO->get_all();
         $dados = array(
             'titulo' => 'Sistema Solidário',
@@ -44,13 +48,15 @@ class Instituicao extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
     }
-    
-    public function editar(){
-        $dados = $this->input->get('id');
-        $instituicoes = $this->InstituicaoDAO->get_instituicoes_by_id($dados);
-        if($instituicoes['id'] == $dados):
-        $instituicoes['isDisponivel'] = 1;
-        $this->InstituicaoDAO->do_update($instituicoes);
+
+    public function ativarInstituicao($id)
+    {
+        if (isset($this->session->isAdministrador)):
+            $dados = array('isDisponivel' => true);
+            $condicao = array('id' => $id);
+            $this->InstituicaoDAO->do_update($dados, $condicao);
+        else:
+            redirect('inicio/');
         endif;
     }
 
