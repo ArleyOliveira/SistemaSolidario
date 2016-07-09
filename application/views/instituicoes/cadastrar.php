@@ -22,7 +22,7 @@
             <div class="panel-body">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Cadastro de Instituiçoes</h3>
+                        <h3 class="panel-title">Cadastro de Instituições</h3>
                     </div>
                     <div class="panel-body">
                         <?php
@@ -32,7 +32,7 @@
 
                         echo form_label('CNPJ (*)') . "<br />";
                         echo form_input(array('id' => 'cnpj', 'name' => 'cnpj', 'class' => 'form-control cnpj-mask', 'placeholder' => 'CNPJ'), set_value('cnpj')) . "<br />";
-             
+
                         echo form_label('Telefone (*)') . "<br />";
                         echo form_input(array('id' => 'telefone', 'name' => 'telefone', 'class' => 'form-control phone-mask', 'placeholder' => 'Telefone'), set_value('telefone')) . "<br />";
 
