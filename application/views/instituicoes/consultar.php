@@ -12,7 +12,7 @@
                 <th>Endereço</th>
                 <th>Descriçao</th>
                 <th>Status</th>
-                <th>Ativar</th>
+                <th>Alterar Status</th>
                 
             </tr>
             <?php
@@ -44,9 +44,9 @@
                 echo '</td>';
                 echo '<td>';
                 if($instituicao->isDisponivel)
-                    echo '<a href="'. base_url('Instituicao/desativarInstituicao/'.$instituicao->id).'" class="btn btn-danger" role="button"> Desativar </a>';                
+                    echo '<a href="'. base_url('Instituicao/desativarInstituicao/'.$instituicao->id).'" class="btn btn-danger btn-xs" role="button"> Desativar </a>';
                 else
-                    echo '<a href="'. base_url('Instituicao/ativarInstituicao/'.$instituicao->id).'" class="btn btn-success" role="button"> Ativar </a>';
+                    echo '<a href="'. base_url('Instituicao/ativarInstituicao/'.$instituicao->id).'" class="btn btn-success btn-xs" role="button"> Ativar </a>';
                 echo '</td>';
                 echo '</tr>';
                 }
