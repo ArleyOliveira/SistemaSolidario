@@ -40,19 +40,34 @@ class Instituicao extends CI_Controller
 
     public function consultar()
     {
-        $instituicoes = $this->InstituicaoDAO->get_all();
-        $dados = array(
-            'titulo' => 'Sistema Solidário',
-            'tela' => 'instituicoes/consultar',
-            'instituicoes' => $instituicoes,
+        if (isset($this->session->isAdministrador)):
+            $instituicoes = $this->InstituicaoDAO->get_all();
+            $dados = array(
+                'titulo' => 'Sistema Solidário',
+                'tela' => 'instituicoes/consultar',
+                'instituicoes' => $instituicoes,
         );
         $this->load->view("exibirDados", $dados);
+        else:
+            redirect('inicio/');
+        endif;
     }
 
     public function ativarInstituicao($id)
     {
         if (isset($this->session->isAdministrador)):
             $dados = array('isDisponivel' => true);
+            $condicao = array('id' => $id);
+            $this->InstituicaoDAO->do_update($dados, $condicao);
+        else:
+            redirect('inicio/');
+        endif;
+    }
+    
+    public function desativarInstituicao($id)
+    {
+        if (isset($this->session->isAdministrador)):
+            $dados = array('isDisponivel' => false);
             $condicao = array('id' => $id);
             $this->InstituicaoDAO->do_update($dados, $condicao);
         else:

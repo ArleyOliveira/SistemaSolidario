@@ -43,7 +43,10 @@
                     echo '<span class="label label-danger"> Desativado </span>';
                 echo '</td>';
                 echo '<td>';
-                echo '<a href="'. base_url('Instituicao/ativarInstituicao/'.$instituicao->id).'"> Ativar </a>';
+                if($instituicao->isDisponivel)
+                    echo '<a href="'. base_url('Instituicao/desativarInstituicao/'.$instituicao->id).'" class="btn btn-danger" role="button"> Desativar </a>';                
+                else
+                    echo '<a href="'. base_url('Instituicao/ativarInstituicao/'.$instituicao->id).'" class="btn btn-success" role="button"> Ativar </a>';
                 echo '</td>';
                 echo '</tr>';
                 }

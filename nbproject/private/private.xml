@@ -5,6 +5,7 @@
         <group>
             <file>file:/var/www/html/SistemaSolidario/application/views/instituicoes/consultar.php</file>
             <file>file:/var/www/html/SistemaSolidario/application/controllers/Instituicao.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Doador.php</file>
             <file>file:/var/www/html/SistemaSolidario/application/models/Instituicao_model.php</file>
         </group>
     </open-files>

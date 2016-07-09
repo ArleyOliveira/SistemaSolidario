@@ -38,13 +38,17 @@ class Doador extends CI_Controller {
     }
     
     public function consultar(){
-        $doadores = $this->DoadorDAO->get_all();
-        $dados = array(
-            'titulo' => 'Sistema Solidário',
-            'tela' => 'doadores/consultar',
-            'doadores' => $doadores,
+        if (isset($this->session->isAdministrador)):        
+            $doadores = $this->DoadorDAO->get_all();
+            $dados = array(
+                'titulo' => 'Sistema Solidário',
+                'tela' => 'doadores/consultar',
+                'doadores' => $doadores,
         );
         $this->load->view("exibirDados", $dados);
+        else:
+            redirect('inicio/');
+        endif;
     }
 
 }
