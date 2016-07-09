@@ -67,3 +67,14 @@
     background-color: #166127;
   }
 }
+
+footer {
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  width: 100%;
+  background-color: #dedede;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+}

@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h2 class="text-center"> Instituiçoes Cadastradas </h2>
+        <h2 class="text-center"> Instituições Cadastradas </h2>
         <table class="table table-striped">
             <tr>
                 <th>Nome</th>
