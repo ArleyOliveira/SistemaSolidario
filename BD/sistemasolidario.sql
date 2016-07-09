@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 08/07/2016 às 05:08
--- Versão do servidor: 10.1.10-MariaDB
--- Versão do PHP: 5.6.19
+-- Generation Time: 09-Jul-2016 às 22:16
+-- Versão do servidor: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `sistemasolidario`
+-- Database: `sistemasolidario`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `doadores`
+-- Estrutura da tabela `doadores`
 --
 
 CREATE TABLE `doadores` (
@@ -37,7 +37,7 @@ CREATE TABLE `doadores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `doadores`
+-- Extraindo dados da tabela `doadores`
 --
 
 INSERT INTO `doadores` (`id`, `nome`, `endereco`, `email`, `senha`, `dataNascimento`, `telefone`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `doadores` (`id`, `nome`, `endereco`, `email`, `senha`, `dataNascime
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `instituicoes`
+-- Estrutura da tabela `instituicoes`
 --
 
 CREATE TABLE `instituicoes` (
@@ -61,7 +61,7 @@ CREATE TABLE `instituicoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `instituicoes`
+-- Extraindo dados da tabela `instituicoes`
 --
 
 INSERT INTO `instituicoes` (`id`, `nome`, `cnpj`, `telefone`, `email`, `endereco`, `descricao`, `isDisponivel`) VALUES
@@ -70,7 +70,22 @@ INSERT INTO `instituicoes` (`id`, `nome`, `cnpj`, `telefone`, `email`, `endereco
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `tipo_doacoes`
+--
+
+CREATE TABLE `tipo_doacoes` (
+  `id_doadores` int(11) NOT NULL,
+  `roupas` tinyint(1) NOT NULL DEFAULT '0',
+  `alimentos` tinyint(1) NOT NULL DEFAULT '0',
+  `outros` tinyint(1) NOT NULL DEFAULT '0',
+  `tempo` tinyint(1) NOT NULL DEFAULT '0',
+  `moveis` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -84,24 +99,24 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `dataNascimento`, `email`, `senha`, `isModerador`, `isAdministrador`) VALUES
 (1, 'Arley Oliveira', '2016-07-15', 'arley.msn@yahoo.com', '202cb962ac59075b964b07152d234b70', 1, 1);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `doadores`
+-- Indexes for table `doadores`
 --
 ALTER TABLE `doadores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `instituicoes`
+-- Indexes for table `instituicoes`
 --
 ALTER TABLE `instituicoes`
   ADD PRIMARY KEY (`id`),
@@ -109,27 +124,33 @@ ALTER TABLE `instituicoes`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `tipo_doacoes`
+--
+ALTER TABLE `tipo_doacoes`
+  ADD PRIMARY KEY (`id_doadores`);
+
+--
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `doadores`
+-- AUTO_INCREMENT for table `doadores`
 --
 ALTER TABLE `doadores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `instituicoes`
+-- AUTO_INCREMENT for table `instituicoes`
 --
 ALTER TABLE `instituicoes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

@@ -34,6 +34,19 @@ endif;
                     echo form_password(array('name' => 'senha', 'class' => 'form-control', 'placeholder' => 'Senha'), set_value('senha')) . "<br />";
                     echo form_label("Repita a senha (*)") . "<br />";
                     echo form_password(array('name' => 'senha2', 'class' => 'form-control', 'placeholder' => 'Repita a senha'), set_value('senha2')) . "<br /> <br />";
+                    echo form_label("O que você esta disposto a doar: ") . "<br />";
+                    echo '<span class="input-group-addon">';
+                    echo form_checkbox(array('id' => 'roupa', 'name' => 'roupa', 'class' => 'form-control', 'placeholder' => 'Roupa', 'aria-label' => 'Roupas'), set_value('roupa'));
+                    echo form_label('Roupas');
+                    echo form_checkbox(array('id' => 'alimento', 'name' => 'alimento', 'class' => 'form-control', 'placeholder' => 'Alimento'), set_value('alimento'));
+                    echo form_label('Alimentos');
+                    echo form_checkbox(array('id' => 'tempo', 'name' => 'tempo', 'class' => 'form-control', 'placeholder' => 'tempo'), set_value('tempo'));
+                    echo form_label('Tempo');
+                    echo form_checkbox(array('id' => 'moveis', 'name' => 'moveis', 'class' => 'form-control', 'placeholder' => 'moveis'), set_value('moveis'));
+                    echo form_label('Moveis');
+                    echo form_checkbox(array('id' => 'outros', 'name' => 'outros', 'class' => 'form-control', 'placeholder' => 'outros'), set_value('outros'));
+                    echo form_label('Outros');
+                    echo '</span>';
                     ?>
                     <?php
                     echo '<span id="sumit" style="display: inline;float: right;">';
