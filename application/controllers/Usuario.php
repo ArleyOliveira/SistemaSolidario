@@ -44,7 +44,7 @@ class Usuario extends CI_Controller
 
     public function consultar()
     {
-        if (isset($this->session->isModerador)):
+        if (isset($this->session->isAdministrador)):
             $usuario = $this->UsuarioDAO->get_all();
             $dados = array(
                 'titulo' => 'Sistema Solidário',
