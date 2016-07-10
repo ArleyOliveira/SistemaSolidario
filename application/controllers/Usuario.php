@@ -44,13 +44,17 @@ class Usuario extends CI_Controller
 
     public function consultar()
     {
-        $usuarioes = $this->DoadorDAO->get_all();
-        $dados = array(
-            'titulo' => 'Sistema Solidário',
-            'tela' => 'usuario/consultar',
-            'usuario' => $usuarioes,
-        );
-        $this->load->view("exibirDados", $dados);
+        if (isset($this->session->isModerador)):
+            $usuario = $this->UsuarioDAO->get_all();
+            $dados = array(
+                'titulo' => 'Sistema Solidário',
+                'tela' => 'usuario/consultar',
+                'usuario' => $usuario,
+            );
+            $this->load->view("exibirDados", $dados);
+        else:
+            redirect('inicio/');
+        endif;
     }
 
     public function logout() {

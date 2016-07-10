@@ -46,7 +46,7 @@ class Instituicao extends CI_Controller
                 'titulo' => 'Sistema Solidário',
                 'tela' => 'instituicoes/consultar',
                 'instituicoes' => $instituicoes,
-        );
+            );
         $this->load->view("exibirDados", $dados);
         else:
             redirect('inicio/');
