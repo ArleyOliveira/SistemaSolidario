@@ -1,94 +1,55 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title> Politica de segurança</title>
-        <link rel="stylesheet" href="<?php echo base_url('lib/style/style.css') ?>">
-    </head>
-    <body>
-        <div class="container">
-            
-            <div class=”container”>
-                
-                <h1>Politica de  seguraça e privacidade</h1>
-            </div>
-            
-            <div class="row">
-                <div>
-                    <p> Nossa política de privacidade visa assegurar a garantia de que, quaisquer informações relativasaos<br> 
-                        nossos usuários,não serão fornecidas, publicadas ou comercializadas em quaisquer circunstâncias.
-                    </p>
-                    <p> Tomamos medidas de segurança consistentes  para proteger suas informações pessoais. Essas medidas<br>
-                        incluem etapas técnicas e de procedimento para proteger seus dados contra utilização imprópria,<br> 
-                        acesso ou divulgação não autorizados, perda, alteração ou destruição.
-                    </p>
-                    <p>
-                        Essa instituição obtém informações dos usuários de duas maneiras: Cadastro e Cookies.
-                    </p>
+<div class="container">
 
-                    <h3>Coleta de informações pessoais</h3>
-                    <p> Toda a coleta de informações pessoais através de nosso site é feita com o total conhecimento e<br>
-                        consentimento de nossos usuários. Para realizar e/ou manifestar interesse em doação pelo nosso<br> 
-                        site, é necessário o fornecimento de algumas informações do usuário/doador.
-                    </p>
+    <div class=”container”>
+        <h1>Política de Segurança e Privacidade</h1>
+    </div>
+ <div class="row">
+    <div class="col-md-12" align="justify"> 
+   
+        <p> Nossa política de privacidade visa assegurar a garantia de que, quaisquer informações 
+            relativas aos nossos usuários,não serão fornecidas, publicadas ou comercializadas 
+            em quaisquer circunstâncias. Tomamos medidas de segurança consistentes  para proteger 
+            suas informações pessoais. Essas medidas incluem etapas técnicas e de procedimento para 
+            proteger seus dados contra utilização imprópria,acesso ou divulgação não autorizados, perda, 
+            alteração ou destruiçã. Essa instituição obtém informações dos usuários de duas maneiras: 
+            Cadastro e Cookies. </p> </br>
+        
+        <h2>Coleta de informações pessoais</h2>
+        <p> Toda a coleta de informações pessoais através de nosso site é feita com o total conhecimento e
+            consentimento de nossos usuários. Para realizar e/ou manifestar interesse em doação pelo nosso
+            site, é necessário o fornecimento de algumas informações do usuário/doador. </p> </br>
             
-                    <h3>Cadastro</h3>
-                    <p>Requisitamos informações pessoais quando você faz uma doação, responde a uma pesquisa, participa <br>
-                        de outras atividades em nosso website. Por exemplo:
-                    </p>
-                    <p>
-                        Se você fizer uma doação on­line, solicitaremos as informações necessárias para completar a doação,<br>
-                        tais como seu nome, endereço e telefone.
-                    </p>
-                     <P>
-                         Você é quem decide se deseja prosseguir com qualquer atividade que solicite informações pessoais.<br> 
-                         No entanto, se você não desejar fornecer as informações solicitadas, não será possível completar a<br>
-                         transação.
-                    </p>
+        <h2>Cadastro</h2>
+        <p> Requisitamos informações pessoais quando você faz uma doação, responde a uma pesquisa, participa
+            de outras atividades em nosso website. Por exemplo: Se você fizer uma doação on­line, solicitaremos 
+            as informações necessárias para completar a doação, tais como seu nome, endereço e telefone. Você é 
+            quem decide se deseja prosseguir com qualquer atividade que solicite informações pessoais.
+            No entanto, se você não desejar fornecer as informações solicitadas, não será possível completar 
+            a transação. </p> </br>
                 
-                    <h3>Cookies e informações de navegação </h3>
-                    <p>
-                        O uso de cookies e informações da navegação (sessão do browser) é feito com o objetivo de traçar<br>
-                        um perfil anônimo do público que visita o website, buscando aperfeiçoar continuamente nossos serviços.
-                    </P>
-                    <P>
-                        Os cookies são identificadores únicos que transferimos para o dispositivo do usuário, que não<br>
-                        armazenam dados pessoais.
-                    </P>
-                    <P>
-                        Se preferir, o usuário pode apagar os cookies existentes em seu computador através do browser; na<br>
-                        maioria dos navegadores, a função "Ajuda" contém instruções sobre como evitar a aceitação de novos<br>
-                        cookies, notificação do recebimento de um novo cookie pelo navegador, ou meio para desabilitar todos<br> 
-                        os cookies de uma só vez.
-                    </p>
+        <h2>Cookies e informações de navegação </h2>
+        <p> O uso de cookies e informações da navegação (sessão do browser) é feito com o objetivo de traçar
+            um perfil anônimo do público que visita o website, buscando aperfeiçoar continuamente nossos serviços.
+            Os cookies são identificadores únicos que transferimos para o dispositivo do usuário, que não
+            armazenam dados pessoais. Se preferir, o usuário pode apagar os cookies existentes em seu computador 
+            através do browser; na maioria dos navegadores, a função "Ajuda" contém instruções sobre como evitar a 
+            aceitação de novos cookies, notificação do recebimento de um novo cookie pelo navegador, ou meio para 
+            desabilitar todos os cookies de uma só vez. </p></br>
              
-                    <h3>Compartilhamento de informações</h3>
-                    <p>
-                        Todas as informações fornecidas por nossos doadores são utilizadas exclusivamente para a realização<br>
-                        da doação e jamais serão cedidas a terceiros. A nossa instuição preza por manter confidencialidade<br> 
-                        das informações fornecida a ela.
-                    </p>
+        <h2>Compartilhamento de informações</h2>
+        <p> Todas as informações fornecidas por nossos doadores são utilizadas exclusivamente para a realização
+            da doação e jamais serão cedidas a terceiros. A nossa instuição preza por manter confidencialidade
+            das informações fornecida a ela. </p></br>
                     
-                    <h3> Acesso de informações pelos doadores</h3>
-                    <p>
-                        Os doadores podem acessar informações atualizadas relativas as doações realizada por ele informações<br>
-                        pessoais.
-                    </p>
+        <h2> Acesso de informações pelos doadores</h2>
+        <p> Os doadores podem acessar informações atualizadas relativas as doações realizada por ele informações
+            pessoais.  </p></br>
        
-                    <h3> Utilização dos dados</h3>
-                    <p>
-                        São dados necessários para a realização da doação: o nome completo da pessoa física ou jurídica;<br>
-                        email e senha, os quais o doadores preencherá no momento do cadastro, para garantir maior segurança;<br>
-                        endereço, com o objetivo de funcionários da intituição poder ir arrecadar a doaçõa telefone,<br 
-                        para que possamos entrar em contato, se houver necessidade.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+        <h2> Utilização dos dados</h2>
+        <p> São dados necessários para a realização da doação: o nome completo da pessoa física ou jurídica;
+            email e senha, os quais o doadores preencherá no momento do cadastro para garantir maior segurança;
+            endereço, com o objetivo de funcionários da intituição poder ir arrecadar a doação; telefone,
+            para que possamos entrar em contato, se houver necessidade. </p></br>
+    </div>
+ </div>
+</div>

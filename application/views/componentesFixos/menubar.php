@@ -19,10 +19,10 @@
                     <a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a>
                 </li>
                 <li><a href="<?php echo base_url("index.php/doador/cadastrar"); ?>">Seja um doador</a></li>
-                <li><a href="<?php echo base_url("index.php/instituicao/cadastrar"); ?>">Instituições</a></li>
-                <li><a href="<?php echo base_url("index.php/pagina/quemSomos"); ?>">Quem Somos</a></li>
+                <li><a href="<?php echo base_url("index.php/instituicao/cadastrar"); ?>">Indicar Instituição</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/comodoar"); ?>">Como Doar</a></li>
-                <li><a href="<?php echo base_url("index.php/pagina/politica"); ?>"> Politica e Segurança </a>
+                <li><a href="<?php echo base_url("index.php/pagina/politica"); ?>"> Política e Segurança </a>
+                <li><a href="<?php echo base_url("index.php/pagina/quemSomos"); ?>">Quem Somos</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php

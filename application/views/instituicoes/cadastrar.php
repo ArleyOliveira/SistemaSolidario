@@ -42,8 +42,8 @@
                         echo form_label('Endereço (*)') . "<br />";
                         echo form_input(array('id' => 'endereco', 'name' => 'endereco', 'class' => 'form-control', 'placeholder' => 'Endereço'), set_value('endereco')) . "<br />";
 
-                        echo form_label('Descriçao (*)') . "<br />";
-                        echo form_textarea(array('name' => 'descricao', 'class' => 'form-control', 'placeholder' => 'Descriçao'), set_value('descricao')) . "<br />";
+                        echo form_label('Descrição (*)') . "<br />";
+                        echo form_textarea(array('name' => 'descricao', 'class' => 'form-control', 'placeholder' => 'Descrição'), set_value('descricao')) . "<br />";
                         ?>
                         <?php
                         echo '<span id="sumit" style="display: inline;float: right;">';

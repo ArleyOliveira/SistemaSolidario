@@ -47,7 +47,7 @@ class Doador extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
         else:
-            redirect('inicio/');
+            redirect('/inicio');
         endif;
     }
 
