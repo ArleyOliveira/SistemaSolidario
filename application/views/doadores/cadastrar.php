@@ -62,7 +62,7 @@
                         echo '</span>';
                         ?>
                         <?php
-                        echo '<span id="sumit" style="display: inline;float: right;">';
+                        echo '<br /> <span id="sumit" style="display: inline;float: right;">';
                         echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-success'), 'Cadastrar') . "<br />";
                         echo '</span>';
                         echo form_close();
