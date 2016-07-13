@@ -14,6 +14,16 @@ class Instituicao_model extends CI_Model
             redirect('/index.php/instituicao/cadastrar');
         endif;
     }
+    
+    public function do_insert_necessidades($dados = NULL)
+    {
+
+        if ($dados != NULL):
+            $this->db->insert('necessidades', $dados);
+            $this->session->set_flashdata('cadastrook', 'Necessidade cadastrada com sucesso!');
+            redirect('/index.php/instituicao/necessidades');
+        endif;
+    }
 
     public function get_all()
     {

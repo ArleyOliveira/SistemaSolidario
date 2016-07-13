@@ -75,4 +75,24 @@ class Instituicao extends CI_Controller
         endif;
     }
 
+    public function cadastrarNecessidade()
+    {
+        $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
+        $this->form_validation->set_rules('descricao', 'Descricao', 'trim|required|max_length[800]');
+        $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|max_length[100]');       
+        $this->form_validation->set_rules('dataExpiracao', 'Data de Expiracao', 'trim|required|max_length[20]');
+   
+
+        if ($this->form_validation->run()):
+            $dados = elements(array('nome', 'cnpj', 'telefone', 'email', 'endereco', 'descricao'), $this->input->post());
+            $this->InstituicaoDAO->do_insert_necessidades($dados);
+        endif;
+
+        $dados = array(
+            'titulo' => 'Sistem Solidário',
+            'tela' => 'instituicoes/necessidades',
+        );
+        $this->load->view("exibirDados", $dados);
+    }
+    
 }
