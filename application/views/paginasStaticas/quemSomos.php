@@ -22,7 +22,7 @@
             Erika Santos: ems.tads@gmail.com </br>
             Igor Guedes: i.guedes93@hotmail.com </br>
             Jardel Lopes: jardelti@yahoo.com.br </br>
-            Josimar Pereira: josimarspj33@gmail.com </br>
+            Josimar Santana: josimarspj33@gmail.com </br>
         </p> 
     </div>
  </div>
