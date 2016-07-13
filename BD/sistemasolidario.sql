@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 13/07/2016 às 17:21
+-- Tempo de Geração: 13/07/2016 às 17:25
 -- Versão do servidor: 5.5.47-0ubuntu0.14.04.1
 -- Versão do PHP: 5.5.9-1ubuntu4.17
 
@@ -79,6 +79,7 @@ INSERT INTO `instituicoes` (`id`, `nome`, `cnpj`, `telefone`, `email`, `endereco
 
 CREATE TABLE IF NOT EXISTS `necessidades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
   `descricao` varchar(200) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `data_inicio` date NOT NULL,
