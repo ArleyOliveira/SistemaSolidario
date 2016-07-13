@@ -1,35 +1,27 @@
-
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h2 class="text-center"> Doadores Cadastrados </h2>
+        <h2 class="text-center"> Usuários Cadastrados </h2>
         <table class="table table-striped">
             <tr>
                 <th>Nome</th>
-                <th>Telefone</th>
-                <th>Endereço</th>
-                <th>Email</th>
                 <th>Data de Nascimento</th>
+                <th>Email</th>
             </tr>
             <?php
-            foreach ($doadores->result() as $doador) {
+            foreach ($usuario->result() as $usuario) {
                 echo '<tr>';
                 echo '<td>';
-                echo $doador->nome;
+                echo $usuario->nome;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->telefone;
+                echo $usuario->dataNascimento;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->endereco;
+                echo $usuario->email;
                 echo '</td>';
                 echo '<td>';
-                echo $doador->email;
-                echo '</td>';
-                echo '<td>';
-                echo $doador->dataNascimento;
-                echo '</td>';
-                echo '<td>';
+                
             }
             ?>
         </table>

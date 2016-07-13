@@ -1,112 +1,132 @@
--- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1    Database: sistemasolidario
--- ------------------------------------------------------
--- Server version	5.5.49-0ubuntu0.14.04.1
+-- Servidor: localhost
+-- Tempo de Geração: 13/07/2016 às 17:21
+-- Versão do servidor: 5.5.47-0ubuntu0.14.04.1
+-- Versão do PHP: 5.5.9-1ubuntu4.17
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `doadores`
+-- Banco de dados: `sistemasolidario`
 --
 
-DROP TABLE IF EXISTS `doadores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `doadores` (
-  `id` int(11) NOT NULL,
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `doadores`
+--
+
+CREATE TABLE IF NOT EXISTS `doadores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(40) NOT NULL,
-  `endereço` varchar(150) NOT NULL,
+  `endereco` varchar(150) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `senha` varchar(20) NOT NULL,
+  `senha` varchar(32) NOT NULL,
   `dataNascimento` date NOT NULL,
   `telefone` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `doadores`
+-- Fazendo dump de dados para tabela `doadores`
 --
 
-LOCK TABLES `doadores` WRITE;
-/*!40000 ALTER TABLE `doadores` DISABLE KEYS */;
-/*!40000 ALTER TABLE `doadores` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `doadores` (`id`, `nome`, `endereco`, `email`, `senha`, `dataNascimento`, `telefone`) VALUES
+(1, 'Fulano', 'rua 2', 'fulano@gmail.com', '202cb962ac59075b964b07152d234b70', '2016-07-13', '93948');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `instituicoes`
+-- Estrutura para tabela `instituicoes`
 --
 
-DROP TABLE IF EXISTS `instituicoes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `instituicoes` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(40) NOT NULL,
-  `cnpj` varchar(30) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `instituicoes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(250) NOT NULL,
+  `cnpj` varchar(30) NOT NULL,
   `telefone` varchar(14) DEFAULT NULL,
-  `email` varchar(40) NOT NULL,
-  `endereco` varchar(200) NOT NULL,
-  `descricao` varchar(100) NOT NULL,
-  `isdisponivel` tinyint(1) DEFAULT '0',
+  `email` varchar(50) NOT NULL,
+  `endereco` varchar(250) NOT NULL,
+  `descricao` varchar(250) NOT NULL,
+  `isDisponivel` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cnpj` (`cnpj`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Fazendo dump de dados para tabela `instituicoes`
+--
+
+INSERT INTO `instituicoes` (`id`, `nome`, `cnpj`, `telefone`, `email`, `endereco`, `descricao`, `isDisponivel`) VALUES
+(1, 'IFNMG', '123456', '252582', 'ifnmg.edu@hotmail.com', 'rua i', 'dkajs', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `necessidades`
+--
+
+CREATE TABLE IF NOT EXISTS `necessidades` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(200) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `data_inicio` date NOT NULL,
+  `data_validade` date NOT NULL,
+  `id_instituicao` int(11) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tipo_doacoes`
+--
+
+CREATE TABLE IF NOT EXISTS `tipo_doacoes` (
+  `id_doadores` int(11) NOT NULL,
+  `roupas` tinyint(1) NOT NULL DEFAULT '0',
+  `alimentos` tinyint(1) NOT NULL DEFAULT '0',
+  `outros` tinyint(1) NOT NULL DEFAULT '0',
+  `tempo` tinyint(1) NOT NULL DEFAULT '0',
+  `moveis` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_doadores`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `instituicoes`
+-- Estrutura para tabela `usuario`
 --
 
-LOCK TABLES `instituicoes` WRITE;
-/*!40000 ALTER TABLE `instituicoes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `instituicoes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `usuario`
---
-
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `dataNascimento` date NOT NULL,
   `email` varchar(30) NOT NULL,
-  `senha` varchar(30) NOT NULL,
+  `senha` varchar(32) NOT NULL,
   `isModerador` tinyint(1) NOT NULL,
   `isAdministrador` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `usuario`
+-- Fazendo dump de dados para tabela `usuario`
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `usuario` (`id`, `nome`, `dataNascimento`, `email`, `senha`, `isModerador`, `isAdministrador`) VALUES
+(1, 'Arley Oliveira', '2016-07-15', 'arley.msn@yahoo.com', '202cb962ac59075b964b07152d234b70', 1, 1);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-07-04 18:04:39

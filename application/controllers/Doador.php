@@ -6,12 +6,10 @@ class Doador extends CI_Controller {
 
     function __construct() {
         parent:: __construct();
-        $this->load->helper('url');
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('array');
         $this->load->library('table');
-        $this->load->library('session');
         $this->load->model('Doador_model', "DoadorDAO");
     }
 
@@ -40,13 +38,17 @@ class Doador extends CI_Controller {
     }
     
     public function consultar(){
-        $doadores = $this->DoadorDAO->get_all();
-        $dados = array(
-            'titulo' => 'Sistema Solidário',
-            'tela' => 'doadores/consultar',
-            'doadores' => $doadores,
+        if (isset($this->session->isAdministrador)):        
+            $doadores = $this->DoadorDAO->get_all();
+            $dados = array(
+                'titulo' => 'Sistema Solidário',
+                'tela' => 'doadores/consultar',
+                'doadores' => $doadores,
         );
         $this->load->view("exibirDados", $dados);
+        else:
+            redirect('/inicio');
+        endif;
     }
 
 }

@@ -2,22 +2,41 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Instituicao_model extends CI_Model {
+class Instituicao_model extends CI_Model
+{
 
-    public function do_insert($dados = NULL) {
+    public function do_insert($dados = NULL)
+    {
 
         if ($dados != NULL):
             $this->db->insert('instituicoes', $dados);
-            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso!');
-            redirect('instituicao/cadastrar');
+            $this->session->set_flashdata('cadastrook', 'Cadastro efetuado com sucesso!');
+            redirect('/index.php/instituicao/cadastrar');
         endif;
     }
 
-    public function get_all() {
+    public function get_all()
+    {
         return $this->db->get('instituicoes');
     }
-    
-    
+
+    public function do_update($dados = NULL, $condicao = NULL)
+    {
+        if ($dados != NULL):
+            $this->db->update('instituicoes', $dados, $condicao);
+            $this->session->set_flashdata('cadastrook', 'Instituição Ativa!');
+            redirect('/instituicao/consultar');
+        endif;
+    }
+
+    public function get_instituicoes_by_id($idinstituicao)
+    {
+        //Busca com condição
+        $query = $this->db->get_where('instituicoes', array('id' => $idinstituicao));
+
+        //row_object() retorna direto o objeto produto e não um array
+        return $query->row_object();
+    }
 
     /*
       public function do_delete($condicao = NULL) {

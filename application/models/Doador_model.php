@@ -9,7 +9,7 @@ class Doador_model extends CI_Model {
         if ($dados != NULL):
             $this->db->insert('doadores', $dados);
             $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso!');
-            redirect('doador/cadastrar');
+            redirect('index.php/doador/cadastrar');
         endif;
     }
 
