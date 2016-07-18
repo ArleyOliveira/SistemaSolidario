@@ -24,6 +24,7 @@
                     </div>
                     <div class="panel-body">
                         <?php
+                        echo form_open('index.php/necessidade/cadastrar');
                         echo form_label('Nome (*)') . "<br />";
                         echo form_input(array('id' => 'nome', 'name' => 'nome', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value('nome')) . "<br />";
                    

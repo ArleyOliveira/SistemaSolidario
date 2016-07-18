@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/instServir.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/quemSomos.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/instDavi.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/politicaPrivacidade.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/ComoDoar.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/instituicoes/cadastrar.php</file>
+<<<<<<< HEAD
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Necessidade.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Instituicao.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/models/Necessidade_model.php</file>
+=======
+            <file>file:/var/www/html/SistemaSolidario/application/views/instituicoes/necessidades.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/models/Instituicao_model.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/componentesFixos/menubar.php</file>
+>>>>>>> d6b9abab5781870b5afe2d10aeb7ae1a8bf1fe5e
         </group>
     </open-files>
 </project-private>

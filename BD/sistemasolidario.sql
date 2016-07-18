@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 13/07/2016 às 17:39
+-- Tempo de Geração: 18/07/2016 às 15:20
 -- Versão do servidor: 5.5.47-0ubuntu0.14.04.1
 -- Versão do PHP: 5.5.9-1ubuntu4.17
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `doacoes` (
   `id` int(11) NOT NULL,
   `id_doador_fk` int(11) NOT NULL,
+  `id_instituicao_fk` int(11) NOT NULL,
   `id_necessidades_fk` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `data_doacao` date NOT NULL,
@@ -97,11 +98,11 @@ CREATE TABLE IF NOT EXISTS `necessidades` (
   `nome` varchar(200) NOT NULL,
   `descricao` varchar(200) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `data_inicio` date NOT NULL,
-  `data_validade` date NOT NULL,
+  `dataInicio` date NOT NULL,
+  `dataExpiracao` date NOT NULL,
   `id_instituicao` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
