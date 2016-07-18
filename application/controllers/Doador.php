@@ -27,7 +27,7 @@ class Doador extends CI_Controller {
         endif;
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('endereco', 'Endereco', 'trim|required|max_length[100]');
-        $this->form_validation->set_rules('telefone', 'Área do conhecimento', 'trim|required|max_length[100]');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('dataNascimento', 'Data de Nascimento', 'trim|required|max_length[100]');   
         $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]');
 	$this->form_validation->set_rules('senha', 'Senha', 'trim|required');

@@ -8,7 +8,8 @@ class Doador_model extends CI_Model {
 
         if ($dados != NULL):
             $this->db->insert('doacoes', $dados);
-            $this->session->set_flashdata('cadastrook','Cadastro de Doação realizado com sucesso!');
+            $this->session->set_flashdata('cadastrook','Cadastro de Doação realizado '
+                    . 'com sucesso!');
             redirect('index.php/doacao/cadastrar');
         endif;
     }
