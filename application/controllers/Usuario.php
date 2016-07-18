@@ -75,7 +75,8 @@ class Usuario extends CI_Controller
             $usuario = $this->UsuarioDAO->get_Login($dados['email'], $dados['senha']);
             if ($usuario != false):
                 $this->session->set_userdata($usuario);
-                redirect('inicio/');
+                //redirect('index.php/inicio');
+            print_r($this->session);
             else:
                 $this->session->set_flashdata('usuarioinvalido', 'Usuário ou senha invalido. Tente novamente!');
             endif;

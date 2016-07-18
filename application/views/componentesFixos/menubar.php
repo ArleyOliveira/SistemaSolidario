@@ -44,14 +44,14 @@
                                 ?>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="<?php echo base_url("usuario/logout")?>">Sair</a>
+                                    <a href="<?php echo base_url("index.php/usuario/logout")?>">Sair</a>
                                 </li>
                             </ul>
                         </li>
                     </div>
                     <?php
                 else:
-                    echo '<li><a href="'.base_url("usuario/login").'">Entrar</a></li>';
+                    echo '<li><a href="'.base_url("index.php/usuario/login").'">Entrar</a></li>';
                 endif;
                 ?>
             </ul>

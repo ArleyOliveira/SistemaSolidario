@@ -64,7 +64,7 @@ $erroAlert = '';
             <div style="padding-top:30px" class="panel-body" >
 
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                <form id="loginform" class="form-horizontal" role="form" method="POST" action="<?php echo base_url('usuario/login') ?>">
+                <form id="loginform" class="form-horizontal" role="form" method="POST" action="<?php echo base_url('index.php/usuario/login') ?>">
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <?php echo form_input(array('id' => 'inputEmail', 'type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Usuário', 'required'=>'', 'autofocus'=>''), set_value('email'));?>
@@ -88,7 +88,7 @@ $erroAlert = '';
                         <!-- Button -->
 
                         <div class="col-sm-12 controls text-right">
-                            <button type="submit" id="btn-login" href="#" class="btn btn-success btn-block">Login  </button>
+                            <button type="submit" id="btn-login" href="<?php echo base_url('index.php/usuario/login') ?>" class="btn btn-success btn-block">Login  </button>
                             <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login com Facebook</a>-->
 
                         </div>
