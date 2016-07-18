@@ -6,47 +6,28 @@
         <table class="table table-striped">
             <tr>
                 <th>Nome</th>
-                <th>CNPJ</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Endereço</th>
-                <th>Descriçao</th>
-                <th>Status</th>
-                <th>Alterar Status</th>
-                
+                <th>Instituição</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Data de Validade</th>
             </tr>
             <?php
-            foreach ($instituicoes->result() as $instituicao) {
+            foreach ($instituicoes->result() as $necessidades) {
                 echo '<tr>';
                 echo '<td>';
-                echo $instituicao->nome;
+                echo $necessidades->nome;
                 echo '</td>';
                 echo '<td>';
-                echo $instituicao->cnpj;
+                echo $necessidades->nomeInstituicao;
                 echo '</td>';
                 echo '<td>';
-                echo $instituicao->telefone;
+                echo $necessidades->descricao;
                 echo '</td>';
                 echo '<td>';
-                echo $instituicao->email;
+                echo $necessidades->quantidade;
                 echo '</td>';
                 echo '<td>';
-                echo $instituicao->endereco;
-                echo '</td>';
-                echo '<td>';
-                echo $instituicao->descricao;
-                echo '</td>';
-                echo '<td>';
-                if ($instituicao->isDisponivel)
-                    echo '<span class="label label-success"> Ativo </span>';
-                else
-                    echo '<span class="label label-danger"> Desativado </span>';
-                echo '</td>';
-                echo '<td>';
-                if($instituicao->isDisponivel)
-                    echo '<a href="'. base_url('Instituicao/desativarInstituicao/'.$instituicao->id).'" class="btn btn-danger btn-xs" role="button"> Desativar </a>';
-                else
-                    echo '<a href="'. base_url('Instituicao/ativarInstituicao/'.$instituicao->id).'" class="btn btn-success btn-xs" role="button"> Ativar </a>';
+                echo $necessidades->data_validade;
                 echo '</td>';
                 echo '</tr>';
                 }
