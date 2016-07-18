@@ -50,5 +50,6 @@ class Doador extends CI_Controller {
             redirect('/inicio');
         endif;
     }
+         
 
 }
