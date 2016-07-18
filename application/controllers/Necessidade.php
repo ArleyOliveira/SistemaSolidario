@@ -22,19 +22,18 @@ class Necessidade extends CI_Controller
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
         $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required');
         $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|numeric');
-        $this->form_validation->set_rules('prazo', 'Descrição', 'trim|required');
+        $this->form_validation->set_rules('dataExpiracao', 'Data de Expiração', 'trim|required');
      
 
         if ($this->form_validation->run()):
-            $dados = elements(array('nome', 'descricao', 'quantidade', 'prazo'), $this->input->post());
-            $dataInicio = date();
-            $dados = array_push($dados, array("dataInicio" =>  $dataInicio));
+            $dados = elements(array('nome', 'descricao', 'quantidade', 'dataExpiracao'), $this->input->post());
+            $dados['dataInicio'] =  date('Y-m-d');
             $this->NecessidadeDAO->do_insert($dados);
         endif;
 
         $dados = array(
             'titulo' => 'Sistem Solidário',
-            'tela' => 'necessidade/cadastrar',
+            'tela' => 'necessidades/cadastrar',
         );
         $this->load->view("exibirDados", $dados);
     }

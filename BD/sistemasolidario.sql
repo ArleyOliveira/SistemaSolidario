@@ -98,11 +98,11 @@ CREATE TABLE IF NOT EXISTS `necessidades` (
   `nome` varchar(200) NOT NULL,
   `descricao` varchar(200) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `data_inicio` date NOT NULL,
-  `data_validade` date NOT NULL,
+  `dataInicio` date NOT NULL,
+  `dataExpiracao` date NOT NULL,
   `id_instituicao` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
