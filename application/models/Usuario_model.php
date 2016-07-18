@@ -58,7 +58,7 @@ class Usuario_model extends CI_Model {
                 );
                 if($tipo == 'admin'){
                     $dados['isAdministrador'] = $usuario->isAdministrador;
-                    $dados['isModelrador'] = $usuario->isModerador;
+                    $dados['isModerador'] = $usuario->isModerador;
 
                 }
                 return $dados;

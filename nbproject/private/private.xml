@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/instServir.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/quemSomos.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/instDavi.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/politicaPrivacidade.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/paginasStaticas/ComoDoar.php</file>
-            <file>file:/C:/wamp/www/SistemaSolidario/application/views/instituicoes/cadastrar.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Necessidade.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Instituicao.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/models/Necessidade_model.php</file>
         </group>
     </open-files>
 </project-private>
