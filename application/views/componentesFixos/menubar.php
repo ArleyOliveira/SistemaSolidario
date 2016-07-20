@@ -16,21 +16,25 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul  class="nav navbar-nav navbar-left">
                 <?php
-                                if(isset($this->session->isAdministrador)) {?>
-                
-                <?php }
-                                ?>
-                <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>
-               
-                <li><a href="<?php echo base_url("index.php/doador/cadastrar"); ?>">Seja um doador</a></li>
+                if(isset($this->session->email)) {?>
                 <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>        
-                <li><a href="<?php echo base_url("index.php/pagina/consultar_necessidades"); ?>">Consultar Necessidades</a></li>
+                <li><a href="<?php echo base_url("index.php/instituicao/cadastrar"); ?>">Indicar Instituição</a></li>
+                <li><a href="<?php echo base_url("index.php/necessidade/cadastrar"); ?>">Lista de Necessidades</a></li>
+                <li><a href="<?php echo base_url("index.php/pagina/doar"); ?>">Faça sua Doação</a></li>
+                <?php  } else {
+                                ?>
+                <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>        
+                <li><a href="<?php echo base_url("index.php/pagina/cadastrar"); ?>">Seja um doador</a></li>
                 <li><a href="<?php echo base_url("index.php/instituicao/cadastrar"); ?>">Indicar Instituição</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/comodoar"); ?>">Como Doar</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/politica"); ?>"> Política e Segurança </a>
                 <li><a href="<?php echo base_url("index.php/pagina/quemSomos"); ?>">Quem Somos</a></li>
-                <li><a href="<?php echo base_url("index.php/necessidade/cadastrar"); ?>">Necessidades</a></li>
+                <li><a href="<?php echo base_url("index.php/necessidade/cadastrar"); ?>">Lista de Necessidades</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/doar"); ?>">Faça sua Doação</a></li>
+                <?php
+                }
+                ?>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
@@ -42,8 +46,7 @@
                                aria-haspopup="true"
                                aria-expanded="false"><?php echo $this->session->nome ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <?php
-                                if(isset($this->session->isAdministrador)) {?>
+                                <?php if (isset($this->session->isAdministrador)) { ?>
                                     <li> <a href="<?php echo base_url("instituicao/consultar") ?>"> Instituições</a> </li>
                                     <li> <a href="<?php echo base_url("doador/consultar") ?>">Doadores</a> </li>
                                     <li> <a href="<?php echo base_url("usuario/consultar") ?>"> Usuários</a> </li>
@@ -52,14 +55,14 @@
                                 <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="<?php echo base_url("index.php/necessidade/cadastrar"); ?>">Cadastrar Necessidades</a>
-                                    <a href="<?php echo base_url("index.php/usuario/logout")?>">Sair</a>
+                                    <a href="<?php echo base_url("index.php/usuario/logout") ?>">Sair</a>
                                 </li>
                             </ul>
                         </li>
                     </div>
                     <?php
                 else:
-                    echo '<li><a href="'.base_url("index.php/usuario/login").'">Entrar</a></li>';
+                    echo '<li><a href="' . base_url("index.php/usuario/login") . '">Entrar</a></li>';
                 endif;
                 ?>
             </ul>
