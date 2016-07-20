@@ -56,7 +56,7 @@
                         echo form_checkbox(array('id' => 'tempo', 'name' => 'tempo', 'class' => 'form-control', 'placeholder' => 'tempo'), set_value('tempo'));
                         echo form_label('Tempo');
                         echo form_checkbox(array('id' => 'moveis', 'name' => 'moveis', 'class' => 'form-control', 'placeholder' => 'moveis'), set_value('moveis'));
-                        echo form_label('Moveis');
+                        echo form_label('Móveis');
                         echo form_checkbox(array('id' => 'outros', 'name' => 'outros', 'class' => 'form-control', 'placeholder' => 'outros'), set_value('outros'));
                         echo form_label('Outros');
                         echo '</span>';
