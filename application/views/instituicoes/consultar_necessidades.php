@@ -12,22 +12,22 @@
                 <th>Data de Validade</th>
             </tr>
             <?php
-            foreach ($instituicoes->result() as $necessidades) {
+            foreach ($necessidades->result() as $necessidade ) {
                 echo '<tr>';
                 echo '<td>';
-                echo $necessidades->nome;
+                echo $necessidade->nome;
                 echo '</td>';
                 echo '<td>';
-                echo $necessidades->nomeInstituicao;
+                echo $necessidade->nomeInstituicao;
                 echo '</td>';
                 echo '<td>';
-                echo $necessidades->descricao;
+                echo $necessidade->descricao;
                 echo '</td>';
                 echo '<td>';
-                echo $necessidades->quantidade;
+                echo $necessidade->quantidade;
                 echo '</td>';
                 echo '<td>';
-                echo $necessidades->data_validade;
+                echo $necessidade->data_validade;
                 echo '</td>';
                 echo '</tr>';
                 }

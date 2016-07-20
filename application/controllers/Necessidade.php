@@ -2,11 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Necessidade extends CI_Controller
-{
+class Necessidade extends CI_Controller {
 
-    function __construct()
-    {
+    function __construct() {
         parent:: __construct();
         $this->load->helper('url');
         $this->load->helper('form');
@@ -17,36 +15,37 @@ class Necessidade extends CI_Controller
         $this->load->model('Necessidade_model', "NecessidadeDAO");
     }
 
-    public function cadastrar()
-    {
-        if (isset($this->session->email) ):
-        $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
-        $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required');
-        $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|numeric');
-        $this->form_validation->set_rules('dataExpiracao', 'Data de Expiração', 'trim|required');
-     
+    public function cadastrar() {
+        if (isset($this->session->email)):
+            $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
+            $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required');
+            $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|numeric');
+            $this->form_validation->set_rules('dataExpiracao', 'Data de Expiração', 'trim|required');
 
-        if ($this->form_validation->run()):
-            $dados = elements(array('nome', 'descricao', 'quantidade', 'dataExpiracao'), $this->input->post());
-            $dados['dataInicio'] =  date('Y-m-d');
-            $this->NecessidadeDAO->do_insert($dados);
-        endif;
 
-        $dados = array(
-            'titulo' => 'Sistem Solidário',
-            'tela' => 'necessidades/cadastrar',
-        );
-        $this->load->view("exibirDados", $dados);    
+            if ($this->form_validation->run()):
+                $dados = elements(array('nome', 'descricao', 'quantidade', 'dataExpiracao'), $this->input->post());
+                $dados['dataInicio'] = date('Y-m-d');
+                $this->NecessidadeDAO->do_insert($dados);
+            endif;
+
+            $dados = array(
+                'titulo' => 'Sistem Solidário',
+                'tela' => 'necessidades/cadastrar',
+            );
+            $this->load->view("exibirDados", $dados);
         else:
-        redirect('/inicio');
+            redirect('/inicio');
         endif;
-        
-        
     }
 
-    public function consultar()
-    {
-       //criar o consultar
+    public function consultar() {
+        $necessidades = $this->NecessidadeDAO->get_all();
+        $dados = array(
+            'titulo' => 'Sistema Solidário',
+            'tela' => 'instituicoes/consultar_necessidades',
+            'necessidades' => $necessidades,);
+        $this->load->view("exibirDados", $dados);
     }
 
 }

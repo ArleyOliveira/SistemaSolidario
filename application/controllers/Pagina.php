@@ -83,4 +83,11 @@ class Pagina extends CI_Controller {
         );
         $this->load->view("exibirDados", $dados);
     }
+    public function consultar_necessidades() {
+        $dados = array(
+            'titulo' => 'Sistem Solidário',
+            'tela' => 'instituicoes/consultar_necessidades',
+        );
+        $this->load->view("exibirDados", $dados);
+    }
 }

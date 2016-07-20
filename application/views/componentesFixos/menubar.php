@@ -15,7 +15,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul  class="nav navbar-nav navbar-left">
-<<<<<<< HEAD
                 <?php
                                 if(isset($this->session->isAdministrador)) {?>
                 
@@ -24,10 +23,8 @@
                 <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>
                
                 <li><a href="<?php echo base_url("index.php/doador/cadastrar"); ?>">Seja um doador</a></li>
-=======
                 <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>        
-                <li><a href="<?php echo base_url("index.php/pagina/cadastrar"); ?>">Seja um doador</a></li>
->>>>>>> 6cc6191493c1c5153d4457d802d69ef0a02c353f
+                <li><a href="<?php echo base_url("index.php/pagina/consultar_necessidades"); ?>">Consultar Necessidades</a></li>
                 <li><a href="<?php echo base_url("index.php/instituicao/cadastrar"); ?>">Indicar Instituição</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/comodoar"); ?>">Como Doar</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/politica"); ?>"> Política e Segurança </a>
