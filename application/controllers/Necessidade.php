@@ -19,6 +19,7 @@ class Necessidade extends CI_Controller
 
     public function cadastrar()
     {
+        if (isset($this->session->email) ):
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
         $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required');
         $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|numeric');
@@ -35,12 +36,17 @@ class Necessidade extends CI_Controller
             'titulo' => 'Sistem Solidário',
             'tela' => 'necessidades/cadastrar',
         );
-        $this->load->view("exibirDados", $dados);
+        $this->load->view("exibirDados", $dados);    
+        else:
+        redirect('/inicio');
+        endif;
+        
+        
     }
 
     public function consultar()
     {
-       
+       //criar o consultar
     }
 
 }

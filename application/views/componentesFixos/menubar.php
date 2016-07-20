@@ -15,6 +15,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul  class="nav navbar-nav navbar-left">
+                <?php
+                                if(isset($this->session->isAdministrador)) {?>
+                
+                <?php }
+                                ?>
                 <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>
                
                 <li><a href="<?php echo base_url("index.php/doador/cadastrar"); ?>">Seja um doador</a></li>
@@ -44,6 +49,7 @@
                                 ?>
                                 <li role="separator" class="divider"></li>
                                 <li>
+                                    <a href="<?php echo base_url("index.php/necessidade/cadastrar"); ?>">Cadastrar Necessidades</a>
                                     <a href="<?php echo base_url("index.php/usuario/logout")?>">Sair</a>
                                 </li>
                             </ul>

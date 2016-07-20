@@ -77,6 +77,7 @@ class Instituicao extends CI_Controller
 
     public function cadastrarNecessidade()
     {
+    //cadastrar necessidades responsável pela instituição
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('descricao', 'Descricao', 'trim|required|max_length[800]');
         $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|max_length[100]');       

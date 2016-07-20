@@ -60,6 +60,7 @@ class Pagina extends CI_Controller {
     }
 
     public function necessidades() {
+        //colocar verificação aqui;
         $dados = array(
             'titulo' => 'Sistem Solidário',
             'tela' => 'instituicoes/necessidades',
