@@ -5,11 +5,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Instituicao_model extends CI_Model
 {
 
-    public function do_insert($dados = NULL)
+    public function do_insert($dados = NULL, $emailResponsavel = NULL)
     {
-
         if ($dados != NULL):
             $this->db->insert('instituicoes', $dados);
+            $responsavelInstituicao['instituicao_id'] = $this->db->insert_id();
+            $responsavelInstituicao['doador_email'] = $emailResponsavel; 
+            $this->db->insert('responsavel_instituicao', $responsavelInstituicao);
             $this->session->set_flashdata('cadastrook', 'Cadastro efetuado com sucesso!');
             redirect('/index.php/instituicao/cadastrar');
         endif;

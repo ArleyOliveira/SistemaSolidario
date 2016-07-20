@@ -20,15 +20,17 @@ class Instituicao extends CI_Controller
     public function cadastrar()
     {
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
-        $this->form_validation->set_rules('cnpj', 'CNPJ', 'trim|required|max_length[20]');
-        $this->form_validation->set_rules('telefone', 'Área do conhecimento', 'trim|required|max_length[100]');
+        $this->form_validation->set_rules('cnpj', 'CNPJ', 'trim|required|max_length[50]');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]');
         $this->form_validation->set_rules('endereco', 'Endereco', 'trim|required|max_length[100]');
-        $this->form_validation->set_rules('descricao', 'Descricao', 'trim|required|max_length[800]');
+        $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required|max_length[800]');
+        $this->form_validation->set_rules('responsavelEmail', 'Email do Responsável', 'trim|required|max_length[50]');
 
         if ($this->form_validation->run()):
             $dados = elements(array('nome', 'cnpj', 'telefone', 'email', 'endereco', 'descricao'), $this->input->post());
-            $this->InstituicaoDAO->do_insert($dados);
+            $emailResponsavel = $this->input->post()['responsavelEmail'];
+            $this->InstituicaoDAO->do_insert($dados, $emailResponsavel);
         endif;
 
         $dados = array(

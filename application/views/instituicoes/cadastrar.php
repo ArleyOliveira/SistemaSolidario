@@ -45,16 +45,34 @@
                         echo form_label('Descrição (*)') . "<br />";
                         echo form_textarea(array('name' => 'descricao', 'class' => 'form-control', 'placeholder' => 'Descrição'), set_value('descricao')) . "<br />";
                         ?>
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Responsável</h5>
+                            </div>
+                            <div class="panel-body">
+                                <?php
+                                echo form_label('Email do Responsável (*)') . "<br />";
+                                echo form_input(array('name' => 'responsavelEmail', 'class' => 'form-control', 'placeholder' => 'Email'), set_value('responsavelEmail')) . "<br />";
+                                ?>
+                            </div>
+                        </div>
                         <?php
+                        echo '<br />';
                         echo '<span id="sumit" style="display: inline;float: right;">';
                         echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-success'), 'Cadastrar') . "<br />";
                         echo '</span>';
-                        echo form_close();
-                        ?>    
+                        ?>
+
                     </div>
+
                 </div>
+                <?php
+                echo form_close();
+                ?>    
             </div>
         </div>
     </div>
-    <div class="col-md-2"></div>
+</div>
+</div>
+<div class="col-md-2"></div>
 </div>
