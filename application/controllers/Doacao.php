@@ -14,9 +14,9 @@ class Doador extends CI_Controller {
     }
 
     public function cadastrar() {
-        $this->form_validation->set_rules('nomeDoador', 'Nome', 'trim|required|max_length[200]');
+        $this->form_validation->set_rules('nomeDoador', 'NomeDoador', 'trim|required|max_length[200]');
         $this->form_validation->set_rules('instituicao', 'Instituicao', 'trim|required|max_length[200]');
-        $this->form_validation->set_rules('nomeDoacao', 'NomeDoador', 'trim|required');
+        $this->form_validation->set_rules('necessidade', 'Necessidade', 'trim|required');
         $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|max_length[100]');
 
         if ($this->form_validation->run()):

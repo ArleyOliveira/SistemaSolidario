@@ -22,6 +22,14 @@ class Pagina extends CI_Controller {
        
     }
     
+    public function cadastrar() {
+        $dados = array(
+            'titulo' => 'Sistem Solidário',
+            'tela' => 'doador/cadastrar',
+        );
+        $this->load->view("exibirDados", $dados);
+    }
+    
     public function politica() {
         $dados = array(
             'titulo' => 'Sistem Solidário',
@@ -67,4 +75,11 @@ class Pagina extends CI_Controller {
         $this->load->view("exibirDados", $dados);
     }
     
+    public function doar() {
+        $dados = array(
+            'titulo' => 'Sistem Solidário',
+            'tela' => 'doacao/cadastrar',
+        );
+        $this->load->view("exibirDados", $dados);
+    }
 }
