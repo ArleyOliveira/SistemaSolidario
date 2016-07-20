@@ -25,9 +25,9 @@
                     </div>
                     <div class="panel-body">
                         <?php
-                        echo form_open('index.php/usuario/cadastrar');
+                        echo form_open('index.php/doacao/cadastrar');
                         echo form_label('Nome (*)') . "<br />";
-                        echo form_input(array('id' => 'nome', 'name' => 'nome', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value('nome')) . "<br />";
+                        echo form_input(array('id' => 'nomeDoador', 'name' => 'nomeDoador', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value(session_id())) . "<br />";
                         
                         echo form_label('Instituição (*)') . "<br />";
                         echo form_input(array('id' => 'instituicao', 'name' => 'instituicao', 'class' => 'form-control', 'placeholder' => 'Instituição'), set_value('instituicao')) . "<br />";
@@ -37,7 +37,7 @@
                         
                         echo form_label('Quantidade (*)') . "<br />";
                         echo form_input(array('name' => 'quantidade', 'class' => 'form-control', 'placeholder' => 'Quantidade'), set_value('quantidade')) . "<br />";
-                        
+                                        
                         ?>
                         <?php
                         echo '<span id="sumit" style="display: inline;float: right;">';

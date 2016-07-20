@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/var/www/html/SistemaSolidario/application/controllers/Necessidade.php</file>
             <file>file:/var/www/html/SistemaSolidario/application/controllers/Instituicao.php</file>
             <file>file:/var/www/html/SistemaSolidario/application/models/Necessidade_model.php</file>
@@ -11,6 +12,18 @@
             <file>file:/var/www/html/SistemaSolidario/application/views/instituicoes/cadastrar.php</file>
             <file>file:/var/www/html/SistemaSolidario/application/views/necessidades/cadastrar.php</file>
             <file>file:/var/www/html/SistemaSolidario/application/controllers/Pagina.php</file>
+=======
+            <file>file:/var/www/html/SistemaSolidario/application/views/paginasStaticas/inicio.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/componentesFixos/header.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/usuario/login.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Usuario.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/controllers/Doador.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/models/Usuario_model.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/usuario/consultar.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/login.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/usuario/cadastrar.php</file>
+            <file>file:/var/www/html/SistemaSolidario/application/views/componentesFixos/menubar.php</file>
+>>>>>>> 4998917eb476d6803ec421189c798d5948b68f55
         </group>
     </open-files>
 </project-private>
