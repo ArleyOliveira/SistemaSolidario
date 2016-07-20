@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 18/07/2016 às 15:20
+-- Tempo de Geração: 20/07/2016 às 16:00
 -- Versão do servidor: 5.5.47-0ubuntu0.14.04.1
 -- Versão do PHP: 5.5.9-1ubuntu4.17
 
@@ -102,7 +102,19 @@ CREATE TABLE IF NOT EXISTS `necessidades` (
   `dataExpiracao` date NOT NULL,
   `id_instituicao` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `responsavel_instituicao`
+--
+
+CREATE TABLE IF NOT EXISTS `responsavel_instituicao` (
+  `instituicao_id` int(11) NOT NULL,
+  `doador_email` varchar(50) NOT NULL,
+  PRIMARY KEY (`instituicao_id`,`doador_email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -143,6 +155,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `dataNascimento`, `email`, `senha`, `isModerador`, `isAdministrador`) VALUES
 (1, 'Arley Oliveira', '2016-07-15', 'arley.msn@yahoo.com', '202cb962ac59075b964b07152d234b70', 1, 1);
+
+--
+-- Restrições para dumps de tabelas
+--
+
+--
+-- Restrições para tabelas `responsavel_instituicao`
+--
+ALTER TABLE `responsavel_instituicao`
+  ADD CONSTRAINT `responsavel_instituicao_ibfk_1` FOREIGN KEY (`instituicao_id`) REFERENCES `instituicoes` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
