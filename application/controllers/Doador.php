@@ -14,7 +14,10 @@ class Doador extends CI_Controller {
     }
 
     public function cadastrar() {
+<<<<<<< HEAD
+=======
         
+>>>>>>> 4998917eb476d6803ec421189c798d5948b68f55
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('endereco', 'Endereco', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('telefone', 'Telefone', 'trim|required|max_length[100]');
