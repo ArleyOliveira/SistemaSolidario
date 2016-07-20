@@ -27,7 +27,7 @@
                         <?php
                         echo form_open('index.php/doacao/cadastrar');
                         echo form_label('Nome (*)') . "<br />";
-                        echo form_input(array('id' => 'nomeDoador', 'name' => 'nomeDoador', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value('nomeDoador')) . "<br />";
+                        echo form_input(array('id' => 'nomeDoador', 'name' => 'nomeDoador', 'class' => 'form-control', 'placeholder' => 'Nome'), set_value(session_id())) . "<br />";
                         
                         echo form_label('Instituição (*)') . "<br />";
                         echo form_input(array('id' => 'instituicao', 'name' => 'instituicao', 'class' => 'form-control', 'placeholder' => 'Instituição'), set_value('instituicao')) . "<br />";

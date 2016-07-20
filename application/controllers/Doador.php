@@ -14,16 +14,7 @@ class Doador extends CI_Controller {
     }
 
     public function cadastrar() {
-        if (isset($this->session->isAdministrador)):        
-            $doadores = $this->DoadorDAO->get_all();
-            $dados = array(
-                'titulo' => 'Sistema Solidário',
-                'tela' => 'inicio/',
-                'doadores' => $doadores, );
-        $this->load->view("exibirDados", $dados);
-        else:
-            redirect('/inicio');
-        endif;
+        
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('endereco', 'Endereco', 'trim|required|max_length[100]');
         $this->form_validation->set_rules('telefone', 'Telefone', 'trim|required|max_length[100]');
@@ -39,7 +30,7 @@ class Doador extends CI_Controller {
         endif;      
         $dados = array(
             'titulo' => 'Sistem Solidário',
-            'tela' => 'doadores/cadastrar',
+            'tela' => 'doador/cadastrar',
         );
         $this->load->view("exibirDados", $dados);
     }
@@ -48,7 +39,7 @@ class Doador extends CI_Controller {
             $doadores = $this->DoadorDAO->get_all();
             $dados = array(
                 'titulo' => 'Sistema Solidário',
-                'tela' => 'doadores/consultar',
+                'tela' => 'doador/consultar',
                 'doadores' => $doadores,);
         $this->load->view("exibirDados", $dados);
         else:
