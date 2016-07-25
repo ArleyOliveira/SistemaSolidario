@@ -13,6 +13,7 @@ class Necessidade extends CI_Controller {
         $this->load->library('table');
         $this->load->library('session');
         $this->load->model('Necessidade_model', "NecessidadeDAO");
+        $this->load->model('Instituicao_model', "InstituicaoDAO");
     }
 
     public function cadastrar() {
@@ -20,12 +21,11 @@ class Necessidade extends CI_Controller {
             $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
             $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required');
             $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|numeric');
-            $this->form_validation->set_rules('dataExpiracao', 'Data de Expiração', 'trim|required');
+            $this->form_validation->set_rules('data_validade', 'Data de Validade', 'trim|required');
 
 
             if ($this->form_validation->run()):
-                $dados = elements(array('nome', 'descricao', 'quantidade', 'dataExpiracao'), $this->input->post());
-                $dados['dataInicio'] = date('Y-m-d');
+                $dados = elements(array('nome', 'descricao', 'quantidade', 'data_validade'), $this->input->post());
                 $this->NecessidadeDAO->do_insert($dados);
             endif;
 
@@ -41,10 +41,13 @@ class Necessidade extends CI_Controller {
 
     public function consultar() {
         $necessidades = $this->NecessidadeDAO->get_all();
+        $instituicao = $this->InstituicaoDAO->get_instituicoes_by_id($necessidades->id_instituicao);
         $dados = array(
             'titulo' => 'Sistema Solidário',
             'tela' => 'instituicoes/consultar_necessidades',
-            'necessidades' => $necessidades,);
+            'necessidades' => $necessidades,
+            'instituicoes'=>$instituicao,
+                );
         $this->load->view("exibirDados", $dados);
     }
 

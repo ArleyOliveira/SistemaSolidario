@@ -19,7 +19,7 @@
                 if(isset($this->session->email)) {?>
                 <li><a href="<?php echo base_url("index.php/pagina/instituicoes"); ?>"> Instituições </a></li>        
                 <li><a href="<?php echo base_url("index.php/instituicao/cadastrar"); ?>">Indicar Instituição</a></li>
-                <li><a href="<?php echo base_url("index.php/necessidade/cadastrar"); ?>">Lista de Necessidades</a></li>
+                <li><a href="<?php echo base_url("index.php/Necessidade/consultar"); ?>">Lista de Necessidades</a></li>
                 <li><a href="<?php echo base_url("index.php/pagina/doar"); ?>">Faça sua Doação</a></li>
                 <?php  } else {
                                 ?>

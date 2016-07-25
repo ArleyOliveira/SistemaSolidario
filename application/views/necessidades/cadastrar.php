@@ -34,8 +34,8 @@
                         echo form_label('Quantidade (*)') . "<br />";
                         echo form_input(array('id' => 'quantidade', 'name' => 'quantidade', 'class' => 'form-control', 'placeholder' => 'Quantidade'), set_value('quantidade')) . "<br />";
 
-                        echo form_label('Data de Expiracao (*)') . "<br />";
-                        echo form_input(array('id' => 'dataExpiracao', 'name' => 'dataExpiracao', 'type' => 'date', 'class' => 'form-control', 'placeholder' => 'Data de Expiracao'), set_value('dataExpiracao')) . "<br />";
+                        echo form_label('Data de Validade (*)') . "<br />";
+                        echo form_input(array('id' => 'data_validade', 'name' => 'data_validade', 'type' => 'date', 'class' => 'form-control', 'placeholder' => 'Data de Validade'), set_value('data_validade')) . "<br />";
                         
                         ?>
                         <?php
