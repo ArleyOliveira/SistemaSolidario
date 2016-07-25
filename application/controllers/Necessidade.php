@@ -17,7 +17,13 @@ class Necessidade extends CI_Controller {
     }
 
     public function cadastrar() {
-        if (isset($this->session->email)):
+        $instituicoes = $this->InstituicaoDAO->get_all();
+        foreach ($instituicoes->result() as $instituicao){      
+           if ($instituicao->responsavelEmail==$this->session->email){
+               $id_instituicao=$instituicao->id;
+           }
+        }
+        if (isset($id_instituicao)):
             $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
             $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required');
             $this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|numeric');
@@ -25,7 +31,7 @@ class Necessidade extends CI_Controller {
 
 
             if ($this->form_validation->run()):
-                $dados = elements(array('nome', 'descricao', 'quantidade', 'data_validade'), $this->input->post());
+                $dados = elements(array('nome', 'descricao', 'quantidade', 'data_validade','id_instituicao'=>$id_instituicao), $this->input->post());
                 $this->NecessidadeDAO->do_insert($dados);
             endif;
 

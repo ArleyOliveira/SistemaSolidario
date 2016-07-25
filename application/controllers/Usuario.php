@@ -59,7 +59,7 @@ class Usuario extends CI_Controller
 
     public function logout() {
         $this->session->sess_destroy();
-        redirect('inicio/');
+        redirect('index.php/');
     }
 
     public function login()

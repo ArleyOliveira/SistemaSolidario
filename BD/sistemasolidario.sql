@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 25/07/2016 às 15:26
+-- Tempo de Geração: 25/07/2016 às 15:56
 -- Versão do servidor: 5.5.47-0ubuntu0.14.04.1
 -- Versão do PHP: 5.5.9-1ubuntu4.17
 
@@ -51,17 +51,14 @@ CREATE TABLE IF NOT EXISTS `doadores` (
   `dataNascimento` date NOT NULL,
   `telefone` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Fazendo dump de dados para tabela `doadores`
 --
 
 INSERT INTO `doadores` (`id`, `nome`, `endereco`, `email`, `senha`, `dataNascimento`, `telefone`) VALUES
-(1, 'Fulano', 'rua 2', 'fulano@gmail.com', '202cb962ac59075b964b07152d234b70', '2016-07-13', '93948'),
-(2, 'josimar', 'rua a', 'josimar@email.com', '202cb962ac59075b964b07152d234b70', '0000-00-00', '(33) 3333-3333'),
-(3, '1234', '123', 'a@a.com', 'c4ca4238a0b923820dcc509a6f75849b', '0000-00-00', '(33) 3333-3333'),
-(4, 'a', 'a', 'a@email.com', 'c4ca4238a0b923820dcc509a6f75849b', '1995-11-11', '(22) 2222-2222');
+(1, 'Fulano', 'rua 2', 'fulano@gmail.com', '202cb962ac59075b964b07152d234b70', '2016-07-13', '93948');
 
 -- --------------------------------------------------------
 
@@ -81,14 +78,15 @@ CREATE TABLE IF NOT EXISTS `instituicoes` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `cnpj` (`cnpj`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Fazendo dump de dados para tabela `instituicoes`
 --
 
 INSERT INTO `instituicoes` (`id`, `nome`, `cnpj`, `telefone`, `email`, `endereco`, `descricao`, `isDisponivel`) VALUES
-(1, 'IFNMG', '123456', '252582', 'ifnmg.edu@hotmail.com', 'rua i', 'dkajs', 0);
+(1, 'IFNMG', '123456', '252582', 'ifnmg.edu@hotmail.com', 'rua i', 'dkajs', 0),
+(9, 'Servir', '25.052.852/4220-00', '(38) 9282-5582', 'servir@servir.com.br', 'Rua 10', 'Entidade de abrigo a crianças da rua.', 0);
 
 -- --------------------------------------------------------
 
@@ -101,21 +99,30 @@ CREATE TABLE IF NOT EXISTS `necessidades` (
   `nome` varchar(200) NOT NULL,
   `descricao` varchar(200) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `data_inicio` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `dataInicio` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data_validade` date NOT NULL,
   `id_instituicao` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Fazendo dump de dados para tabela `necessidades`
+-- Estrutura para tabela `responsavel_instituicao`
 --
 
-INSERT INTO `necessidades` (`id`, `nome`, `descricao`, `quantidade`, `data_inicio`, `data_validade`, `id_instituicao`) VALUES
-(1, 'leite', 'leite', 1, '2016-07-25 17:50:04', '0000-00-00', 0),
-(2, '12345', '123456', 1, '2016-07-25 18:12:41', '0000-00-00', 0),
-(3, 'a', 'a', 1, '2016-07-25 18:13:55', '0000-00-00', 0),
-(4, 'feijão', 'a', 1, '2016-07-25 18:19:09', '2017-02-12', 0);
+CREATE TABLE IF NOT EXISTS `responsavel_instituicao` (
+  `instituicao_id` int(11) NOT NULL,
+  `doador_email` varchar(50) NOT NULL,
+  PRIMARY KEY (`instituicao_id`,`doador_email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `responsavel_instituicao`
+--
+
+INSERT INTO `responsavel_instituicao` (`instituicao_id`, `doador_email`) VALUES
+(9, 'erika@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -156,6 +163,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `dataNascimento`, `email`, `senha`, `isModerador`, `isAdministrador`) VALUES
 (1, 'Arley Oliveira', '2016-07-15', 'arley.msn@yahoo.com', '202cb962ac59075b964b07152d234b70', 1, 1);
+
+--
+-- Restrições para dumps de tabelas
+--
+
+--
+-- Restrições para tabelas `responsavel_instituicao`
+--
+ALTER TABLE `responsavel_instituicao`
+  ADD CONSTRAINT `responsavel_instituicao_ibfk_1` FOREIGN KEY (`instituicao_id`) REFERENCES `instituicoes` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
